@@ -20,7 +20,7 @@ const scrape = (async (dept, number) => {
     let n = headers.length;
     headers[0] = headers[0].substring(4);
     headers[n-1] = headers[n-1].substring(0,headers[n-1].length-5);
-    data.push(headers);
+    //data.push(headers);
     //console.log(headers);
     
     const table = await page.$eval('#tableDiv tbody', el => el.innerHTML);
@@ -34,8 +34,15 @@ const scrape = (async (dept, number) => {
         let n3 = row.length;
         row[0] = row[0].substring(4);
         row[n3-1] = row[n3-1].substring(0,row[n3-1].length-5);
-        data.push(row);
+
+        const merge = headers.reduce((obj, key, index) => {
+            obj[key] = row[index];
+            return obj;
+        }, {});
+        data.push(merge);
+        console.log(merge);
     });
-    console.log(data[0]);
+
     browser.close();
 });
+scrape("ENGR", 102);
