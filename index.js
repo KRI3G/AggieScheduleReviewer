@@ -44,8 +44,7 @@ pdfParser.on("pdfParser_dataReady", (pdfData) => {
         i++
     }
     console.log(data)
-})   
-  
+});
     
 
 pdfParser.loadPDF("./schedule.pdf");

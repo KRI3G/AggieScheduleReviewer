@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-const scrape = (async (dept, section) => {
+const scrape = (async (dept, section, honors) => { //honors is T/F
     //example: 
     //const dept = "ENGR";
     //const number = 102;
@@ -16,6 +16,7 @@ const scrape = (async (dept, section) => {
         if(chart_check.includes("No data returned. Is your input correct?")){
             throw new Error(`No data for section: ${section} in this department: ${dept}.`);
         }
+
         await page.waitForSelector('tr');
         await page.waitForSelector('td');
 
@@ -45,7 +46,9 @@ const scrape = (async (dept, section) => {
                 obj[key] = row[index];
                 return obj;
             }, {});
-            data.push(merge);
+            if(honors == merge['Prof'].includes('(H)')){
+                data.push(merge);
+            }
         });
 
         const json_object_pre = data.reduce((object, item, index) => {
@@ -62,11 +65,12 @@ const scrape = (async (dept, section) => {
             }
     });
     }catch(error){
-        console.error(`No data for section: ${section} in this department: ${dept}.`);
+        //console.error("error: ", error);
+        console.error(`No data for section: ${section} in this department: ${dept}, with honors flag ${honors}\n\n`, error);
     }finally {
         await browser.close();
         console.log("Broswer closed.");
     }
 });
 
-scrape("MEEN", 210);
+scrape("MEEN", 210, true);
