@@ -57,7 +57,7 @@ const scrape = (async (dept, section, honors) => { //honors is T/F
         });
         const json_object = JSON.stringify(json_object_pre, null, 2);
 
-        fs.writeFile('../data/anex_data.json', json_object, (err) => {
+        fs.writeFile('./data/anex_data.json', json_object, (err) => {
             if(err) { 
                 console.error("Error writing JSON object to file", err);
             }else{
