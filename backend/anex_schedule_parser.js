@@ -1,6 +1,6 @@
 const fs = require("fs");
 console.log('exporting....');
-const { scrape } = require("/Users/kingisaac/Documents/Documents - John’s MacBook Pro (2)/Github/AggieScheduleReviewer/backend/webscrapper.js");
+const { scrape } = require("./webscrapper.js");
 console.log('new exporting....')
 
 async function loadJSON(filePath) {
