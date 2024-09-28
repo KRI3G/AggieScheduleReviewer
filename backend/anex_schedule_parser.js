@@ -5,13 +5,19 @@ const schedule_data = loadJSON('../data/schedule.json');
 
 async function loadJSON(file){
   try{
-    const json_string = await fs.readFile(file, 'utf8');
-    const data = JSON.parse(json_string);
-    return data;
+    fs.readFile(file, (err, data) => {
+    if (err) {
+      console.error('Error:', err);
+    } else {
+      const jsonString = data.toString('utf8');
+      const jsonData = JSON.parse(jsonString);
+      return jsonData;
+    }
+});
   }catch(err){
     console.error("error parsing JSON file: ", err);
   }
 }
 
 const classes = schedule_data["data"];
-console.log(classes);
+console.log(anex_data);
