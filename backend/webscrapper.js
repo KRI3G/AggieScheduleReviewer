@@ -51,11 +51,8 @@ const scrape = (async (dept, section, honors) => { //honors is T/F
             }
         });
 
-        const json_object_pre = data.reduce((object, item, index) => {
-            object[index] = item;
-            return object;
-        });
-        const json_object = JSON.stringify(json_object_pre, null, 2);
+        console.log(data);
+        const json_object = JSON.stringify(data, null, 2);
 
         fs.writeFile('../data/anex_data.json', json_object, (err) => {
             if(err) { 
@@ -74,3 +71,7 @@ const scrape = (async (dept, section, honors) => { //honors is T/F
 });
 
 scrape("MEEN", 210, true);
+
+module.exports = {
+    scrape
+};
