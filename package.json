@@ -3,3 +3,9 @@
     "puppeteer": "^23.4.1"
   }
 }
+{
+  "dependencies": {
+    "pdf2json": "^3.1.4",
+    "pdf2table": "^0.0.2"
+  }
+}
