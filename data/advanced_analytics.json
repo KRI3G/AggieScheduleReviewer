@@ -1,0 +1,102 @@
+{
+  "CHEM-107-504": {
+    "analytics": {
+      "Average_GPA": null,
+      "A_percentage": null,
+      "Total_Students_Taught": 0
+    },
+    "past_classes": []
+  },
+  "CHEM-117-550": {
+    "analytics": {
+      "Average_GPA": 3.3363333333333336,
+      "A_percentage": 50.57339449541285,
+      "Total_Students_Taught": 872
+    },
+    "past_classes": [
+      {
+        "Year": "2023",
+        "Semester": "FALL",
+        "Prof": "MARTINEZ Z",
+        "GPA": "3.467",
+        "Section": "504",
+        "A": "188",
+        "B": "92",
+        "C": "34",
+        "D": "3",
+        "F": "0",
+        "I": "0",
+        "Q": "5",
+        "S": "0",
+        "U": "0",
+        "X": "0"
+      },
+      {
+        "Year": "2022",
+        "Semester": "FALL",
+        "Prof": "MARTINEZ Z",
+        "GPA": "3.300",
+        "Section": "504",
+        "A": "127",
+        "B": "97",
+        "C": "32",
+        "D": "5",
+        "F": "2",
+        "I": "0",
+        "Q": "12",
+        "S": "0",
+        "U": "0",
+        "X": "0"
+      },
+      {
+        "Year": "2022",
+        "Semester": "FALL",
+        "Prof": "MARTINEZ Z",
+        "GPA": "3.242",
+        "Section": "503",
+        "A": "126",
+        "B": "91",
+        "C": "29",
+        "D": "8",
+        "F": "6",
+        "I": "1",
+        "Q": "14",
+        "S": "0",
+        "U": "0",
+        "X": "0"
+      }
+    ]
+  },
+  "CLEN-181-537": {
+    "analytics": {
+      "Average_GPA": null,
+      "A_percentage": null,
+      "Total_Students_Taught": 0
+    },
+    "past_classes": []
+  },
+  "ENGR-102-505": {
+    "analytics": {
+      "Average_GPA": null,
+      "A_percentage": null,
+      "Total_Students_Taught": 0
+    },
+    "past_classes": []
+  },
+  "MATH-251-521": {
+    "analytics": {
+      "Average_GPA": null,
+      "A_percentage": null,
+      "Total_Students_Taught": 0
+    },
+    "past_classes": []
+  },
+  "POLS-207-517": {
+    "analytics": {
+      "Average_GPA": null,
+      "A_percentage": null,
+      "Total_Students_Taught": 0
+    },
+    "past_classes": []
+  }
+}
