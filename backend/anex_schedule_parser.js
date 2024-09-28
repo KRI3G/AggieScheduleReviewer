@@ -1,73 +1,103 @@
-const fs = require("fs");
-console.log('exporting....');
-const { scrape } = require("/Users/kingisaac/Documents/Documents - John’s MacBook Pro (2)/Github/AggieScheduleReviewer/backend/webscrapper.js");
-console.log('new exporting....')
+const fs = require("fs").promises;
+const scraper = require("./webscrapper.js");
 
 async function loadJSON(filePath) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) {
-        console.error("Error reading file:", err);
-        reject(err);
-      } else {
-        try {
-          const jsonData = JSON.parse(data);
-          resolve(jsonData);
-        } catch (parseError) {
-          console.error("Error parsing JSON:", parseError);
-          reject(parseError);
-        }
-      }
-    });
-  });
+  try{
+    const data = await fs.readFile(filePath, 'utf8');
+    const jsonData = JSON.parse(data);
+    return jsonData;
+  }catch(error){
+    console.error("Error reading JSON file:", err);
+  }
 }
-      
 
 async function main(){
-  console.log("dummy");
   const schedule_data_pre = await loadJSON('../data/schedule.json');
   const schedule_data = schedule_data_pre["data"];
-  console.log("schedule_data loaded\n", schedule_data[0]);
+  const full_data = {};
 
-  schedule_data.forEach(async class_data => {
+  for(class_data of schedule_data){
     const dept = class_data["class"]["dept"];
     const number = class_data["class"]["num"];
     const section = class_data["class"]["section"];
+    const full = class_data["class"]["full"];
     const instructor_pre = class_data["prof"].split(" ");
-    const instructor = instructor_pre[0] + instructor_pre[1].substring(0,1);
-    console.log(instructor);
+    const instructor = instructor_pre[1].toUpperCase() + " " + instructor_pre[0].substring(0,1);
+    //console.log(instructor);
 
-    scrape(dept, number, false); //how to do honors?
-    const anex_data = await loadJSON('../data/anex_data.json');
+    try{
+      await scraper.scrape(dept, number, false); //how to do honors?
+      const anex_data = await loadJSON('../data/anex_data.json');
 
-    /*
-    {
-    "Year": "2024",
-    "Semester": "SPRING",
-    "Prof": "SMITH J",
-    "GPA": "3.461",
-    "Section": "511",
-    "A": "182",
-    "B": "110",
-    "C": "30",
-    "D": "0",
-    "F": "1",
-    "I": "0",
-    "Q": "5",
-    "S": "0",
-    "U": "0",
-    "X": "0"
-  },
-    */
-    console.log(anex_data);
-    anex_data.forEach(professor_class_analytics => {
-      if(instructor != professor_class_analytics["Prof"]){
-        console.log("NO MATCH: ", instructor, " vs ", professor_class_analytics);
+      /*
+      {
+      "Year": "2024",
+      "Semester": "SPRING",
+      "Prof": "SMITH J",
+      "GPA": "3.461",
+      "Section": "511",
+      "A": "182",
+      "B": "110",
+      "C": "30",
+      "D": "0",
+      "F": "1",
+      "I": "0",
+      "Q": "5",
+      "S": "0",
+      "U": "0",
+      "X": "0"
+    },
+      */
+      let gpa_sum = 0;
+      let classes = 0;
+      let a_sum = 0; 
+      let n_students = 0;
+      const analytics = {
+        "Average_GPA": "", //gpa_sum/classes
+        "A_percentage": "", //a_sum / n_students
+        "Total_Students_Taught": "",
+
+      };
+      const past_classes = []; //2d array for all classes
+      const filters = ["A","B","C","D","F","I","Q","S","U","X"];
+      console.log("searching for prof: " + instructor + ` in class ${dept}-${number}-${section}`);
+      //console.log(anex_data);
+      for(professor_class_analytics of anex_data){
+        //alternatively throw into hm and query that way, probably way faster
+        console.log(instructor)
+        console.log(professor_class_analytics["Prof"])
+        if(instructor != professor_class_analytics["Prof"]){
+          //console.log("skipping: ", instructor, " vs ", professor_class_analytics["Prof"]);
+          continue;
+        }
+        console.log("matched: ", instructor, " vs ", professor_class_analytics["Prof"]);
+        gpa_sum += Number(professor_class_analytics["GPA"]);
+        a_sum += Number(professor_class_analytics["A"]);
+        classes++;
+        for(const filter of filters){
+          n_students += Number(professor_class_analytics[filter]);
+        }
+        past_classes.push(professor_class_analytics);
       }
-      console.log("MATCH: ", instructor, " vs ", professor_class_analytics);
+      analytics["Average_GPA"] = gpa_sum/classes;
+      analytics["A_percentage"] = (a_sum/n_students) * 100;
+      analytics["Total_Students_Taught"] = n_students;
+      const object = {
+        "analytics" : analytics,
+        "past_classes" : past_classes,
+      }
+      full_data[full] = object;
+      //full_data.push(past_classes);
+    }catch(error){
+      console.error("Error processing class data: ", error);
+    }
+    const full_data_JSON = JSON.stringify(full_data, null, 2);
+    fs.writeFile("../data/advanced_analytics.json", full_data_JSON, (err) => {
+      if(err) { 
+        console.error("Error writing JSON object to file", err);
+      }
     });
-  });
+  };
 }
 
-console.log("owo!");
 main();

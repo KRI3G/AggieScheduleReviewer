@@ -1,0 +1,95 @@
+.big-title {
+    font-size: 50px;  /* Adjust the size as needed */
+    font-weight: bold; /* Makes the text bold */
+    color: #6e2121;       /* Optional: Change text color */
+    text-align: center;
+
+
+}
+.fileinput {
+    position: absolute;         /* Absolute positioning to place it anywhere */
+    bottom: 20px;               /* 20px from the bottom of the page */
+    right: 20px;                 /* 20px from the left of the page */
+    display: flex;              /* Flexbox for alignment */
+    justify-content: flex-start;/* Align horizontally to the start */
+    align-items: flex-start;    /* Align vertically to the start */
+}
+.fileinput input[type="file"] {
+    padding: 10px;               /* Padding for a better look */
+    background-color: maroon;     /* Maroon background */
+    color: white;                 /* White text color */
+    border: 2px solid white;      /* White border for contrast */
+    border-radius: 5px;           /* Rounded corners */
+    font-size: 16px;              /* Font size */
+    cursor: pointer;              /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+.fileinput button {
+    padding: 10px 20px;           /* Padding for the button */
+    margin-left: 10px;            /* Space between the input and button */
+    background-color: white;      /* White background */
+    color: maroon;                /* Maroon text color */
+    border: 2px solid maroon;     /* Maroon border */
+    border-radius: 5px;           /* Rounded corners */
+    font-size: 16px;              /* Font size */
+    cursor: pointer;              /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+.fileinput input[type="file"]:hover {
+    background-color: #800000;    /* Darker maroon on hover */
+}
+.fileinput button:hover {
+    background-color: maroon;     /* Maroon background on hover */
+    color: white;                 /* White text on hover */
+}
+
+body {
+    background-image: url('wildwestbackground.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.title {
+    font-size: 60px;             /* Increased for a more prominent title */
+    font-weight: 700;            /* Stronger bold */
+    color: maroon;               /* Maroon text color */
+    text-align: center;          /* Center the title */
+    letter-spacing: 2px;         /* Adds space between letters for better readability */
+    text-transform: uppercase;   /* Makes the title all uppercase for impact */
+    
+  
+    
+    
+    text-shadow: 
+        -2px -2px 0 white,       /* White shadow to the top left */
+        2px -2px 0 white,        /* White shadow to the top right */
+        -2px 2px 0 white,        /* White shadow to the bottom left */
+        2px 2px 0 white;
+}   
+.img-container {
+    position: absolute;
+    height: 200px;
+    width: 600px;
+    top: 0;
+    left: 100px;
+    
+        /* Controls the maximum width of the` container */
+}
+
+/* The actual image */
+.img-container img {
+    width: 100%;           /* Make the image responsive */
+    height: auto;          /* Maintain aspect ratio */
+    display: block;        /* Remove unwanted space below the image */
+}
+
+/* Text that goes on top of the image */
+.title {
+    position: absolute;
+    height: 200px;
+    width: 600px;
+    top: 100px;
+    left: 100px;
+    z-index: 10;
+    
+}
