@@ -26,8 +26,7 @@
             "name": "ILCB",
             "room": "111",
             "type": "LEC"
-          },
-          "building_name": "Building:ILCB Room: 111 (LEC)"
+          }
         }
       ]
     },
@@ -55,8 +54,7 @@
             "T"
           ],
           "timeStart": "14:20",
-          "timeEnd": "17:10",
-          "building_name": "Building:ILSQ Room: E311 (LAB)"
+          "timeEnd": "17:10"
         }
       ]
     },
@@ -84,8 +82,7 @@
             "W"
           ],
           "timeStart": "12:40",
-          "timeEnd": "13:30",
-          "building_name": "Building:ZACH Room: 360 (SEM)"
+          "timeEnd": "13:30"
         }
       ]
     },
@@ -113,8 +110,7 @@
             "name": "ZACH",
             "room": "353",
             "type": "LAB"
-          },
-          "building_name": "Building:ZACH Room: 353 (LAB)"
+          }
         },
         {
           "date": "2024-08-19 / 2024-12-10",
@@ -127,8 +123,7 @@
             "name": "ZACH",
             "room": "353",
             "type": "LAB"
-          },
-          "building_name": "Building:ZACH Room: 353 (LAB)"
+          }
         },
         {
           "date": "2024-08-19 / 2024-12-10",
@@ -141,8 +136,7 @@
             "M"
           ],
           "timeStart": "17:10",
-          "timeEnd": "18:00",
-          "building_name": "Building:ZACH Room: 353 (LEC)"
+          "timeEnd": "18:00"
         }
       ]
     },
@@ -172,8 +166,7 @@
             "F"
           ],
           "timeStart": "08:00",
-          "timeEnd": "08:50",
-          "building_name": "Building:HELD Room: 113 (LEC)"
+          "timeEnd": "08:50"
         }
       ]
     },
@@ -203,8 +196,7 @@
             "F"
           ],
           "timeStart": "15:00",
-          "timeEnd": "15:50",
-          "building_name": "Building:ILCB Room: 111 (LEC)"
+          "timeEnd": "15:50"
         }
       ]
     }

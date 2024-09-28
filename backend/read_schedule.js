@@ -39,17 +39,16 @@ pdfParser.on("pdfParser_dataReady", (pdfData) => {
                     template["dates"][0]["timeEnd"] = timeMatch[0].split(" - ")[1]
 
                 } else if (datastr.startsWith("Building")) { 
-                    template["dates"][0]["building_name"] =  decoded
 
                     const buildingRegex = /(?<=Building:)[A-Z]+/;
-                    const buildingMatch = decoded.match(buildingRegex);
+                    const buildingMatch = decoded.match(buildingRegex); // ILCB
 
                     const roomRegex = /(?<=Room: )[A-Z0-9]+(?= \()/;
-                    const roomMatch = decoded.match(roomRegex);
+                    const roomMatch = decoded.match(roomRegex); // 111
                     
 
                     const typeRegex = /(?<=\()\w+(?=\))/;
-                    const typeMatch = decoded.match(typeRegex);
+                    const typeMatch = decoded.match(typeRegex); // LEC, SEM, or LAB
 
                     template["dates"][0]["building"]["name"] = buildingMatch[0].trim() 
                     template["dates"][0]["building"]["room"] = roomMatch[0]
@@ -58,7 +57,7 @@ pdfParser.on("pdfParser_dataReady", (pdfData) => {
 
                     if ((i + 1 < pdfData.Pages[1].Texts.length) && (pdfData.Pages[1].Texts[i + 1].R[0].T.startsWith("Date"))) { // Checks if the next data point is another date
                         template["dates"].unshift({date: "", days: [], timeStart: "", timeEnd: "", building: {name: "", room: "", type: ""}}) // Add a new date
-                        
+                        // Add to the beginnig
                     } else {
         
                         j++
@@ -67,12 +66,12 @@ pdfParser.on("pdfParser_dataReady", (pdfData) => {
                 j--
             } else if (template_keys[j] == "class") {
                 split_class = decoded.split("-")
-                template["class"]["dept"] = split_class[0]
-                template["class"]["num"] = split_class[1]
-                template["class"]["section"] = split_class[2]
-                template["class"]["full"] = decoded
+                template["class"]["dept"] = split_class[0] // CHEM
+                template["class"]["num"] = split_class[1] // 107
+                template["class"]["section"] = split_class[2] // Section #
+                template["class"]["full"] = decoded 
             } else {
-                template[template_keys[j]] = decoded
+                template[template_keys[j]] = decoded // Any other
             }
             j++
             datastr = ""
@@ -86,9 +85,9 @@ pdfParser.on("pdfParser_dataReady", (pdfData) => {
         }
         i++
     }
-    require('fs').writeFileSync('./schedule.json', JSON.stringify({data: data}, null, 2) , 'utf-8');
+    require('fs').writeFileSync('../data/schedule.json', JSON.stringify({data: data}, null, 2) , 'utf-8');
 })   
   
     
 
-pdfParser.loadPDF("./schedule.pdf");
+pdfParser.loadPDF("../data/schedule.pdf");
