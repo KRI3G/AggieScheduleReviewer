@@ -1,4 +1,5 @@
 const fs = require("fs").promises;
+const fetch = require('node-fetch')
 const scraper = require("./webscrapper.js");
 
 async function loadJSON(filePath) {
@@ -7,7 +8,7 @@ async function loadJSON(filePath) {
     const jsonData = JSON.parse(data);
     return jsonData;
   }catch(error){
-    console.error("Error reading JSON file:", err);
+    console.error("Error reading JSON file:", error);
   }
 }
 
@@ -26,9 +27,13 @@ async function main(){
     //console.log(instructor);
 
     try{
-      await scraper.scrape(dept, number, false); //how to do honors?
-      const anex_data = await loadJSON('../data/anex_data.json');
-
+      const body = {dept: dept, number: number}
+      const params = new URLSearchParams();
+      params.append('dept', dept);
+      params.append('number', number)
+      const response = await fetch('https://anex.us/grades/getData/?', {method: 'POST', body: params, headers: {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"}})
+      const anex_data = await response.json()
+      console.log(anex_data)
       /*
       {
       "Year": "2024",
@@ -62,7 +67,7 @@ async function main(){
       const filters = ["A","B","C","D","F","I","Q","S","U","X"];
       console.log("searching for prof: " + instructor + ` in class ${dept}-${number}-${section}`);
       //console.log(anex_data);
-      for(professor_class_analytics of anex_data){
+      for(professor_class_analytics of anex_data.classes){
         //alternatively throw into hm and query that way, probably way faster
         console.log(instructor)
         console.log(professor_class_analytics["Prof"])

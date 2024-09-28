@@ -1,5 +1,5 @@
 const pdf = require('pdf2json')
-const data = []
+let data = []
 const pdfParser = new pdf();
 
 
@@ -78,9 +78,14 @@ function parsePDF(pdf) {
                     }
                     i++;
                 }
+                datastr = ""
+                i = 0
+                j = 0
                 resolve(data); // Resolve the promise with the parsed data
+                data = []
             } catch (error) {
                 reject(error); // Reject the promise if any error occurs
+                data = []
             }
         });
     });
