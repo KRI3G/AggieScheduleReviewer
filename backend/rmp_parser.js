@@ -244,7 +244,6 @@ async function getProfRating(ultimateObj) {
 			return profJSON.data[currentProf].overall_rating;
 		}
 	};
-
 }
 
 // Function to get average ratings of professor
@@ -280,7 +279,8 @@ async function getRatings(professor) {
 	output.push(isMandatory);
 	output.push(difficulty/20);
 
-	// [All reviews, Overall Rating, is attendance mandatory, difficulty]
+	// [[All reviews], Overall Rating, is attendance mandatory, difficulty]
+  console.log(output);
 	return output;
 };
 
@@ -288,3 +288,4 @@ async function getRatings(professor) {
 //const rmpEP = 'https://www.ratemyprofessors.com/paginate/professors/ratings?tid=2590541&filter=&courseCode=&page=';
 
 getRatings(object);
+

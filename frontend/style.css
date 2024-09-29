@@ -115,7 +115,7 @@ body{
     position:absolute;
     text-align: center;
     color:white;
-    display:block;
+    display:none;
 }
 #speech-bubble-container img{
     width:80%;
@@ -126,6 +126,12 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+#to_statistics_hyperlink{
+    position:fixed;
+    bottom:0;
+    right:0;
+    display:none;
 }
 
 

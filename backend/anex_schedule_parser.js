@@ -12,13 +12,8 @@ async function loadJSON(filePath) {
 }
 
 async function get_grades(schedule_data){
-<<<<<<< Updated upstream
-  
-  const promises = schedule_data.classes.map(async (class_data, i) => {
-=======
   console.log(schedule_data);
   const promises = schedule_data.map(async (class_data, i) => {
->>>>>>> Stashed changes
     const dept = class_data["class"]["dept"];
     const number = class_data["class"]["num"];
     const section = class_data["class"]["section"];
@@ -89,10 +84,6 @@ async function get_grades(schedule_data){
 
     } catch (error) {
       console.error("Error while grabbing JSON: ", error);
-<<<<<<< Updated upstream
-      schedule_data.classes[i]["grades"] = {
-        "data_available": false
-=======
       schedule_data[i]["grades"] = {
         "data_available": false,
         "data":{
@@ -101,7 +92,6 @@ async function get_grades(schedule_data){
           "Total_Students_Taught": null 
         },
         "past_classes": null
->>>>>>> Stashed changes
       };
     }
   });
