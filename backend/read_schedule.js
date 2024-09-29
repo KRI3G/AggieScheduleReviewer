@@ -82,6 +82,7 @@ function parsePDF(pdf) {
                 i = 0
                 j = 0
                 data = await require('./anex_schedule_parser').get_grades(data)
+                console.log(data)
                 resolve(data); // Resolve the promise with the parsed data
                 data = []
             } catch (error) {
