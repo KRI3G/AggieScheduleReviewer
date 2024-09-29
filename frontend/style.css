@@ -138,9 +138,8 @@ body{
 #table-container{
     position:fixed;
     top:1%;
-    left:31%;
+    left:32%;
     font-family: Arial, sans-serif;
-    margin: 20px;
     background-color: maroon;
 }
 table {
