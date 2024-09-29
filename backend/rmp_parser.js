@@ -302,3 +302,7 @@ for (let scheduleClassInx in object.data) {
 	object.data[scheduleClassInx].ratings = ratings;
 	console.log(object.data[scheduleClassInx]);
 };
+
+module.exports = {
+  getRatings
+};
