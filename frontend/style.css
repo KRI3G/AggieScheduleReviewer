@@ -138,7 +138,7 @@ body{
 }
 #table-container{
     position:block;
-
+    margin-top: 20px;
     font-family: Arial, sans-serif;
     background-color: maroon;
 }
@@ -235,11 +235,11 @@ tr:hover {
 }
 
 #reveille-text-review {
-    
-    display: block;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    transform: translatex(5%);
+    transform: translateX(5%);
+    
 }
 /* Dog image styling */
 #reveille-review-container {
@@ -265,7 +265,7 @@ tr:hover {
     padding: 10px, 50px;
     font-size: 16px;
     align-content: center;
-   
+    
 }
 
 /* Adding the tail of the speech bubble */
