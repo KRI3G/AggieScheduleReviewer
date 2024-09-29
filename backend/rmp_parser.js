@@ -259,7 +259,7 @@ async function getRatings(professor, classIndex) {
 	const professorId = await getProfId(professor, classIndex);
   const overall = await getProfRating(professor, classIndex);
 	if (professorId == "N/A") {
-		const output = [];
+		const output = {};
 		return output;
 	}
 	//console.log(professorId + " professor Id")
@@ -305,10 +305,11 @@ async function processRatings() {
     object.data[scheduleClassInx].ratings = ratings; // Assign the resolved ratings
     list.push(ratings); // Push resolved ratings to list
   }
-
+  //console.log(list);
   return list; // Return the list of ratings
 }
-/*
+
+
 processRatings()
   .then((list) => {
     console.log(list);
@@ -316,7 +317,8 @@ processRatings()
   .catch((error) => {
     console.error("error! ", error);
   });
-*/
+  
+
 
 module.exports = {
   processRatings
