@@ -1,102 +1,37 @@
 {
   "CHEM-107-504": {
+    "data_available": true,
     "analytics": {
-      "Average_GPA": null,
-      "A_percentage": null,
-      "Total_Students_Taught": 0
-    },
-    "past_classes": []
+      "Average_GPA": 3.0948548402957674,
+      "A_percentage": 36.861051115910726,
+      "Total_Students_Taught": 1389
+    }
   },
   "CHEM-117-550": {
+    "data_available": true,
     "analytics": {
-      "Average_GPA": 3.3363333333333336,
-      "A_percentage": 50.57339449541285,
-      "Total_Students_Taught": 872
-    },
-    "past_classes": [
-      {
-        "Year": "2023",
-        "Semester": "FALL",
-        "Prof": "MARTINEZ Z",
-        "GPA": "3.467",
-        "Section": "504",
-        "A": "188",
-        "B": "92",
-        "C": "34",
-        "D": "3",
-        "F": "0",
-        "I": "0",
-        "Q": "5",
-        "S": "0",
-        "U": "0",
-        "X": "0"
-      },
-      {
-        "Year": "2022",
-        "Semester": "FALL",
-        "Prof": "MARTINEZ Z",
-        "GPA": "3.300",
-        "Section": "504",
-        "A": "127",
-        "B": "97",
-        "C": "32",
-        "D": "5",
-        "F": "2",
-        "I": "0",
-        "Q": "12",
-        "S": "0",
-        "U": "0",
-        "X": "0"
-      },
-      {
-        "Year": "2022",
-        "Semester": "FALL",
-        "Prof": "MARTINEZ Z",
-        "GPA": "3.242",
-        "Section": "503",
-        "A": "126",
-        "B": "91",
-        "C": "29",
-        "D": "8",
-        "F": "6",
-        "I": "1",
-        "Q": "14",
-        "S": "0",
-        "U": "0",
-        "X": "0"
-      }
-    ]
+      "Average_GPA": 3.4977742217977856,
+      "A_percentage": 59.846717760746415,
+      "Total_Students_Taught": 3001
+    }
   },
   "CLEN-181-537": {
-    "analytics": {
-      "Average_GPA": null,
-      "A_percentage": null,
-      "Total_Students_Taught": 0
-    },
-    "past_classes": []
+    "data_available": false
   },
   "ENGR-102-505": {
+    "data_available": true,
     "analytics": {
-      "Average_GPA": null,
-      "A_percentage": null,
-      "Total_Students_Taught": 0
-    },
-    "past_classes": []
+      "Average_GPA": 3.2138477331016344,
+      "A_percentage": 39.03326403326403,
+      "Total_Students_Taught": 1924
+    }
   },
   "MATH-251-521": {
+    "data_available": true,
     "analytics": {
       "Average_GPA": null,
       "A_percentage": null,
       "Total_Students_Taught": 0
-    },
-    "past_classes": []
-  },
-  "POLS-207-517": {
-    "analytics": {
-      "Average_GPA": null,
-      "A_percentage": null,
-      "Total_Students_Taught": 0
-    },
-    "past_classes": []
+    }
   }
 }

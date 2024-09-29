@@ -36,7 +36,7 @@ function arrayBufferToBase64( buffer ) {
 async function retrieveData(buffer) {
     const bufferBase64 =  btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)));
     console.log(bufferBase64)
-    const response2 = await fetch(`backend/schedule`, {
+    const response2 = await fetch(`../backend/schedule`, {
         method: 'POST',
         body: JSON.stringify({ data: bufferBase64 }),
         headers: {
