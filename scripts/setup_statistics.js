@@ -3,7 +3,7 @@ function main(json_object){
     const tbody = document.querySelector('table tbody');
     const body = document.querySelector('body');
     // [[All reviews], Overall Rating, is attendance mandatory, difficulty]
-    let columns = ["classname", "professor", "data_available?", "average_gpa","a_percentage","total_students_taught","overall rating","is attendance mandatory", ];
+    let columns = ["Class Name", "Professor", "Data available?", "Average GPA","A Percentage","Total students taught","Overall Rating","Is Attendance Mandatory?", "Difficulty"];
 
     for(const column of columns){
         const header_div = document.createElement('th');
