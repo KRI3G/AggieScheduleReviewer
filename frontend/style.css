@@ -49,31 +49,36 @@ body {
     background-attachment: fixed;
     background-size: 100% 100%;
 }
+/* Title with higher z-index (if you want the title on top) */
 .title {
-    font-size: 60px;             /* Increased for a more prominent title */
-    font-weight: 700;            /* Stronger bold */
-    color: maroon;               /* Maroon text color */
-    text-align: center;          /* Center the title */
-    letter-spacing: 2px;         /* Adds space between letters for better readability */
-    text-transform: uppercase;   /* Makes the title all uppercase for impact */
+    position: absolute;
+    height: 200px;
+    width: 600px;
+    top: 100px;
+    left: 150px;
+    z-index: 10; /* Ensures the title is above the image */
     
-  
-    
-    
+    font-size: 60px;            /* Increased for a more prominent title */
+    font-weight: 700;           /* Stronger bold */
+    color: maroon;              /* Maroon text color */
+    text-align: center;         /* Center the title */
+    letter-spacing: 2px;        /* Adds space between letters for better readability */
+    text-transform: uppercase;  /* Makes the title all uppercase for impact */
     text-shadow: 
-        -2px -2px 0 white,       /* White shadow to the top left */
-        2px -2px 0 white,        /* White shadow to the top right */
-        -2px 2px 0 white,        /* White shadow to the bottom left */
-        2px 2px 0 white;
-}   
+        -2px -2px 0 white,      /* White shadow to the top left */
+        2px -2px 0 white,       /* White shadow to the top right */
+        -2px 2px 0 white,       /* White shadow to the bottom left */
+        2px 2px 0 white;        /* White shadow to the bottom right */
+}
+
+/* Image container (behind the title) */
 .img-container {
     position: absolute;
     height: 200px;
     width: 600px;
     top: 0;
-    left: 100px;
-    
-        /* Controls the maximum width of the` container */
+    left: 150px;
+    z-index: 1; /* Ensures the image is behind the title */
 }
 
 /* The actual image */
@@ -83,13 +88,26 @@ body {
     display: block;        /* Remove unwanted space below the image */
 }
 
-/* Text that goes on top of the image */
-.title {
-    position: absolute;
-    height: 200px;
-    width: 600px;
-    top: 100px;
-    left: 100px;
-    z-index: 10;
-    
+
+@keyframes sway {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.title, .img-container {
+    animation: sway 3s ease-in-out infinite;
+    transform-origin: top center; /* Makes it sway like it's hanging from the top */
 }
