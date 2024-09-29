@@ -13,7 +13,7 @@ async function loadJSON(filePath) {
 
 async function get_grades(schedule_data){
   
-  const promises = schedule_data.map(async (class_data, i) => {
+  const promises = schedule_data.classes.map(async (class_data, i) => {
     const dept = class_data["class"]["dept"];
     const number = class_data["class"]["num"];
     const section = class_data["class"]["section"];
@@ -53,7 +53,7 @@ async function get_grades(schedule_data){
 
       if (new_list.length === 0) {
         console.log('zero length');
-        schedule_data[i]["grades"] = {
+        schedule_data.classes[i]["grades"] = {
           "data_available": false
         };
         return;
@@ -74,7 +74,7 @@ async function get_grades(schedule_data){
       analytics["A_percentage"] = (a_sum / n_students) * 100;
       analytics["Total_Students_Taught"] = n_students;
 
-      schedule_data[i]["grades"] = {
+      schedule_data.classes[i]["grades"] = {
         "data_available": true,
         "data": analytics,
         "past_classes": past_classes
@@ -82,12 +82,13 @@ async function get_grades(schedule_data){
 
     } catch (error) {
       console.error("Error while grabbing JSON: ", error);
-      schedule_data[i]["grades"] = {
+      schedule_data.classes[i]["grades"] = {
         "data_available": false
       };
     }
   });
   await Promise.all(promises);
+  console.log(schedule_data)
   return schedule_data;
 }
 
