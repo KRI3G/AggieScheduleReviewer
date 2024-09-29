@@ -290,3 +290,25 @@ tr:hover {
 #data-table-container {
     margin-top: 30px;
 }
+.helpButton{
+   
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 2000px; /* Adjust to your needs */
+    height: 50px; /* Adjust to your needs */
+    background-image: url('Directional_sign.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+   
+    text-decoration: none;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+.helpButton:hover{
+    Transform: scale(1.2);
+}
