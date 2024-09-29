@@ -156,7 +156,8 @@ th, td {
 
 th {
     background-color: maroon;
-    color: white;
+    color: rgb(230,230,230);
+    box-shadow: 10px;
 }
 
 tr {
