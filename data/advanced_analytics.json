@@ -1,42 +1,37 @@
 {
   "CHEM-107-504": {
+    "data_available": true,
     "analytics": {
-      "Average_GPA": null,
-      "A_percentage": null,
-      "Total_Students_Taught": 0
-    },
-    "past_classes": []
+      "Average_GPA": 3.0948548402957674,
+      "A_percentage": 36.861051115910726,
+      "Total_Students_Taught": 1389
+    }
   },
   "CHEM-117-550": {
+    "data_available": true,
     "analytics": {
-      "Average_GPA": null,
-      "A_percentage": null,
-      "Total_Students_Taught": 0
-    },
-    "past_classes": []
+      "Average_GPA": 3.4977742217977856,
+      "A_percentage": 59.846717760746415,
+      "Total_Students_Taught": 3001
+    }
+  },
+  "CLEN-181-537": {
+    "data_available": false
   },
   "ENGR-102-505": {
+    "data_available": true,
     "analytics": {
-      "Average_GPA": null,
-      "A_percentage": null,
-      "Total_Students_Taught": 0
-    },
-    "past_classes": []
+      "Average_GPA": 3.2138477331016344,
+      "A_percentage": 39.03326403326403,
+      "Total_Students_Taught": 1924
+    }
   },
   "MATH-251-521": {
+    "data_available": true,
     "analytics": {
       "Average_GPA": null,
       "A_percentage": null,
       "Total_Students_Taught": 0
-    },
-    "past_classes": []
-  },
-  "POLS-207-517": {
-    "analytics": {
-      "Average_GPA": null,
-      "A_percentage": null,
-      "Total_Students_Taught": 0
-    },
-    "past_classes": []
+    }
   }
 }
