@@ -4,7 +4,6 @@
     color: #6e2121;       /* Optional: Change text color */
     text-align: center;
 
-
 }
 .fileinput {
     position: absolute;         /* Absolute positioning to place it anywhere */
@@ -78,6 +77,7 @@ body {
     width: 600px;
     top: -15px;
     left: 150px;
+    transform:translate(0%, 50%);
     /* Ensures the image is behind the title */
 }
 .img-container h1{
@@ -97,13 +97,36 @@ body {
 }
 
 #reveille{
-    width: 300px;
+    position:absolute;
+    margin-left:-200px;
+    width: 500px;
     height: 500px;
     margin-top: 400px;
 }
 
+
 body{
     overflow-y: hidden;
+}
+#speech-bubble-container{
+    min-height: 400px;
+    min-width: 400px;
+    left:0;
+    bottom:0;
+    position:absolute;
+    text-align: center;
+    color:white;
+    display:block;
+}
+#speech-bubble-container img{
+    width:80%;
+    height:80%;
+}
+#speech-bubble-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes sway {
