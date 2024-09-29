@@ -1,4 +1,3 @@
-const {main} = require("./setup_statistics");
 
 document.getElementById('pdf-form').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevents the form from submitting normally
@@ -46,7 +45,7 @@ async function retrieveData(buffer) {
       response2.json(response2).then(data => {
         console.log(data);
         const speechBubble =  document.getElementById("speech-bubble-review-text")
-        document.getElementById("reveille-text-review").style.display = "flex";
+        document.getElementById("reveille-text-review").style.display = "block";
         document.getElementById("loading").style.display = "none";
         const fullText = data.prompt;
         

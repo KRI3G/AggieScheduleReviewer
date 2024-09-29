@@ -137,9 +137,8 @@ body{
     display:none;
 }
 #table-container{
-    position:fixed;
-    top:1%;
-    left:32%;
+    position:block;
+
     font-family: Arial, sans-serif;
     background-color: maroon;
 }
@@ -237,7 +236,7 @@ tr:hover {
 
 #reveille-text-review {
     
-    display: flex;
+    display: block;
     flex-direction: row;
     align-items: center;
     transform: translatex(5%);
@@ -266,7 +265,7 @@ tr:hover {
     padding: 10px, 50px;
     font-size: 16px;
     align-content: center;
-    transform: translateY(-40%);
+   
 }
 
 /* Adding the tail of the speech bubble */

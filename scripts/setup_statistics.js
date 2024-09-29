@@ -62,7 +62,3 @@ function main(json_object){
         //console.log(tbody.innerHTML);
     }
 }
-
-module.exports = {
-    main
-};
