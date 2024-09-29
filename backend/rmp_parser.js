@@ -252,7 +252,14 @@ async function getRatings(professor) {
 		const rmpResponse = await fetch(rmpEndpoint + "");
 		const rmpResponseData = await pageQuery.json();
 		
-		for review in rmp
+		var userReviews[]
+		var overall
+		var attendance
+		var difficulty
+
+		for (let review in rmpResonseData.ratings) {
+			
+		}
 	}
 
 
