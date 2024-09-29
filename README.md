@@ -1,5 +1,7 @@
 # AggieScheduleReviewer
 
+![image](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/347/datas/small.png)
+
 ## Inspiration
 We all had trouble signing up for classes, torn between overestimating and underestimating ourselves. So we decided to help future students with this conondrum.
 ## What it does
