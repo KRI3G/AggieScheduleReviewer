@@ -22,7 +22,11 @@ function base64ToArrayBuffer(base64) {
 app.post('/backend/schedule', async function(req, res) {
     const base64String = req.body.data; // Access the Base64 string
     const pdf = base64ToArrayBuffer(base64String)
-    res.send(await readSchedule.parsePDF(pdf))
+    const data = await readSchedule.parsePDF(pdf)
+
+    const ai_response = await require('./ai_response.js').generateReview(data)
+    console.log(ai_response)
+    res.send(ai_response)
 });
 
 app.listen(port, function () {
