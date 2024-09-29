@@ -223,7 +223,8 @@ async function loadJSON(filePath) {
 // Function to find the RMP ID number of a given 
 async function getProfId(ultimateObj, classIndex) {
 	const profJSON = await loadJSON('../data/professors.json');
-	console.log(ultimateObj.data[classIndex].prof)
+	//console.log(classIndex);
+	//console.log(ultimateObj.data[classIndex].prof);
 	const profName = ultimateObj.data[classIndex].prof;
 
 	for (let currentProf = 0; currentProf < profJSON.data.length; currentProf++) {
@@ -232,6 +233,9 @@ async function getProfId(ultimateObj, classIndex) {
 			return profJSON.data[currentProf].tid;
 		}
 	};
+
+	// If professor not found, return blank
+	return "N/A";
 
 };
 
@@ -250,19 +254,23 @@ async function getProfRating(ultimateObj, classIndex) {
 // Function to get average ratings of professor
 async function getRatings(professor, classIndex) {
 	const professorId = await getProfId(professor, classIndex);
-	console.log(professorId + " professor Id")
+	if (professorId == "N/A") {
+		const output = [];
+		return output;
+	}
+	//console.log(professorId + " professor Id")
 	const rmpEndpoint = "https://www.ratemyprofessors.com/paginate/professors/ratings?tid=" + professorId + "&filter=&courseCode=&page=";
 
 	const rmpResponse = await fetch(rmpEndpoint + "1");
 	const rmpResponseData = await rmpResponse.json();
 	
-	var userReviews = [];
-	var overall = await getProfRating(professor, classIndex);
-	var attendance = 0;
-	var difficulty = 0;
+	let userReviews = [];
+	let overall = await getProfRating(professor, classIndex);
+	let attendance = 0;
+	let difficulty = 0;
 
 	for (let reviewNum in rmpResponseData.ratings) {
-		var review = rmpResponseData.ratings[reviewNum]
+		let review = rmpResponseData.ratings[reviewNum];
 		userReviews.push(review.rComments);
 		if (review.attendance == "Mandatory") {
 			attendance++
@@ -270,27 +278,50 @@ async function getRatings(professor, classIndex) {
 		difficulty += review.rEasy
 	};
 
-	var output = [];
-	output.push(userReviews);
-	output.push(parseFloat(overall));
+	let output = {};
+	output["reviews"] = userReviews;
+	output["overall"] = (parseFloat(overall));
 	if (attendance/20 > .5) {
 		var isMandatory = true;
 	} else {
 		var isMandatory = false;
 	};
-	output.push(isMandatory);
-	output.push(difficulty/20);
-
-	console.log(output)
+	output["isMandatory"] = (isMandatory);
+	output["difficulty"] = (difficulty/20);
 	// [All reviews, Overall Rating, is attendance mandatory, difficulty]
 	return output;
 };
 
+const list = [
 
-for (let scheduleClassInx in object.data) {
-	console.log(scheduleClassInx + " iteration")
-	const ratings = getRatings(object, scheduleClassInx);
+];
 
-	object.data[scheduleClassInx].ratings = ratings;
-	console.log(object.data[scheduleClassInx]);
+const promise = new Promise((resolve, reject) => { 
+  const success = true;
+  if(success){
+    for (let scheduleClassInx in object.data) {
+    //console.log(scheduleClassInx + " iteration")
+    const ratings = getRatings(object, scheduleClassInx);
+    object.data[scheduleClassInx].ratings = ratings;
+    list.push(ratings);
+    //console.log(list);
+    //console.log(object.data[scheduleClassInx]);
+    };
+    const success = true;
+    resolve(list);
+  }else{
+    reject("promise was rejected!");
+  }
+});
+
+promise
+  .then(() => {
+    console.log(list);
+  })
+  .catch((error) => {
+    console.error("error! ", error);
+  });
+
+module.exports = {
+  getRatings
 };
