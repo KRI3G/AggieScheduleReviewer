@@ -13,7 +13,6 @@ async function loadJSON(filePath) {
 
 async function get_grades(schedule_data){
   const promises = schedule_data.classes.map(async (class_data, i) => {
-    console.log(class_data)
     const dept = class_data["class"]["dept"];
     const number = class_data["class"]["num"];
     const section = class_data["class"]["section"];
@@ -90,7 +89,6 @@ async function get_grades(schedule_data){
     }
   });
   await Promise.all(promises);
-  console.log(schedule_data)
   return schedule_data;
 }
 

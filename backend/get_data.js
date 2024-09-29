@@ -20,9 +20,9 @@ function base64ToArrayBuffer(base64) {
 
 
 app.post('/backend/schedule', async function(req, res) {
+    console.log("Request of Schedule")
     const base64String = req.body.data; // Access the Base64 string
     const pdf = new Buffer.from(base64String, 'base64');
-    console.log(pdf)
     const data = await readSchedule.parsePDF(pdf)
     const json_object = JSON.stringify(data, null, 2);
 
