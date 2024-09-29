@@ -41,10 +41,25 @@ async function retrieveData(buffer) {
 
       response2.json(response2).then(data => {
         console.log(data);
-        document.getElementById("reveille_text_review").style.display = "block";
+        const speechBubble =  document.getElementById("speech-bubble-review-text")
+        document.getElementById("reveille-text-review").style.display = "flex";
         document.getElementById("loading").style.display = "none";
-        document.getElementById("speech-bubble-text_review").textContent = data.prompt
+        const fullText = data.prompt;
+        
+        // Clear the text content initially
+        speechBubble.textContent = "";
+        let currentIndex = 0;
+        async function typeLetter() {
+          for (let i = 0; i < fullText.length; i++) {
+            let character = fullText.charAt(i);
+            speechBubble.textContent += fullText.charAt(i);
+            await new Promise(resolve => setTimeout(resolve, 25));  // Adjust the speed (50ms delay per character)
+           }
+        }
+        // Start the typing effect
+        typeLetter();
       });
       
 
 }
+
