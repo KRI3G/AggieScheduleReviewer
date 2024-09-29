@@ -261,3 +261,24 @@ tr:hover {
     position: relative;
     display: inline-block;
 }
+.helpButton {
+    position: fixed;
+    top: 10px;   /* Adjust this value to move the button vertically */
+    right: 10px; /* Adjust this value to move the button horizontally */
+    padding: 15px 30px;
+    background-image: url('Directional_sign.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.HelpButton:hover {
+    opacity: 0.8;
+}
