@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src = "../scripts/script.js"></script>
-    <script defer src = "./Website.js"></script>
+    <script defer src = "../scripts/Website.js"></script>
     <link rel="stylesheet" href="./style.css">
     <title>Howdy!</title>
     </head>
@@ -13,21 +13,21 @@
     </head>
     <body>
         
-        <h1 class="title sign" >Howdy!</h1>
         <div class = img-container>
             <img src="Sign_png.png" alt="hanging sign" width="300">
-
+            <h1 class="title sign" >Howdy!</h1>
         </div>
-        
-            <div class = 'fileinput'>
+        <div class = 'fileinput'>
             <form id="pdf-form" >
                 
                 <input type="file" id="pdf-file" accept="application/pdf" required/>
                 <br/><br/>
                 <button type="submit" >Upload PDF</button>
             </form>
-            
-
         </div>     
+
+        <div id = "reveille_text">
+            <img src = "dog.webp" id = "reveille">
+        </div>
     </body>
     </html>

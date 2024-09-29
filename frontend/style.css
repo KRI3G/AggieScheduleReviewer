@@ -73,21 +73,38 @@ body {
 
 /* Image container (behind the title) */
 .img-container {
-    position: absolute;
+    position: relative;
     height: 200px;
     width: 600px;
-    top: 0;
+    top: -15px;
     left: 150px;
-    z-index: 1; /* Ensures the image is behind the title */
+    /* Ensures the image is behind the title */
 }
-
+.img-container h1{
+    top:50%;
+    left:50%;
+    position:absolute;
+    text-align: center;
+    transform: translate(-49%, -0%);
+    z-index:2;
+}
 /* The actual image */
 .img-container img {
     width: 100%;           /* Make the image responsive */
     height: auto;          /* Maintain aspect ratio */
     display: block;        /* Remove unwanted space below the image */
+    z-index:1;
 }
 
+#reveille{
+    width: 300px;
+    height: 500px;
+    margin-top: 400px;
+}
+
+body{
+    overflow-y: hidden;
+}
 
 @keyframes sway {
     0% {
@@ -107,7 +124,7 @@ body {
     }
 }
 
-.title, .img-container {
+.img-container {
     animation: sway 3s ease-in-out infinite;
     transform-origin: top center; /* Makes it sway like it's hanging from the top */
 }
