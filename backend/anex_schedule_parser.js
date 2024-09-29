@@ -71,8 +71,8 @@ async function get_grades(schedule_data){
       //console.log(past_classes);
       past_classes.splice(2);
 
-      analytics["Average_GPA"] = gpa_sum / classes;
-      analytics["A_percentage"] = (a_sum / n_students) * 100;
+      analytics["Average_GPA"] = (gpa_sum / classes).toFixed(2);
+      analytics["A_percentage"] = ((a_sum / n_students) * 100).toFixed(2);
       analytics["Total_Students_Taught"] = n_students;
 
       schedule_data.classes[i]["grades"] = {
