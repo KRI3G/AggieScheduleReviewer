@@ -1,7 +1,34 @@
 const pdf = require('pdf2json')
 let data = []
 const pdfParser = new pdf();
+function militaryTimeToMinutes(time) {
+    // Split the time string into hours and minutes
+    const [hours, minutes] = time.split(":").map(Number);
+  
+    // Calculate the total minutes
+    const totalMinutes = hours * 60 + minutes;
+  
+    return totalMinutes;
+  }
 
+function getSchedule(data) {
+    const schedule = {"M": [], "T": [], "W": [], "R": [], "F": []}
+    data.forEach(cl => {
+        console.log(cl)
+        cl.dates.forEach(date => {
+            date.days.forEach(day => {
+                schedule[day].push({class: cl.name, timeStart: date.timeStart, timeEnd: date.timeEnd})
+            })
+        })
+    })
+
+    console.log(schedule)
+    Object.keys(schedule).forEach(d => {
+      schedule[d].sort((a, b) => militaryTimeToMinutes(a.timeStart) - militaryTimeToMinutes(b.timeStart));
+    })
+
+    return {schedule: schedule, classes: data}
+}
 
 function parsePDF(pdf) {
     return new Promise((resolve, reject) => {
@@ -21,24 +48,25 @@ function parsePDF(pdf) {
                 while (i < pdfData.Pages[1].Texts.length) { // The table of schedules is on the second page
                     const text = pdfData.Pages[1].Texts[i].R[0].T;
                     datastr += text;
-
                     if (!text.endsWith("%20")) {
+
                         let decoded = decodeURIComponent(datastr);
+                        console.log(decoded)
                         if (template_keys[j] === "dates") {
                             if (datastr.startsWith("Date")) {
                                 template["dates"][0]["date"] = decoded.split("Date: ")[1];
                             } else if (datastr.startsWith("Days")) {
-                                const daysRegex = /(?<=Days: )[A-Z ]+(?= Time)/;
+                                const daysRegex = /(?<=Days:\s*)[A-Z ]+(?=\s*Time)/;
                                 const daysMatch = decoded.match(daysRegex);
                                 
-                                const timeRegex = /(?<=Time: )\d{2}:\d{2} - \d{2}:\d{2}/;
+                                const timeRegex = /(?<=Time:\s*)\d{2}:\d{2} - \d{2}:\d{2}/;
                                 const timeMatch = decoded.match(timeRegex);
 
                                 template["dates"][0]["days"] = daysMatch[0].trim().split(" ");
                                 template["dates"][0]["timeStart"] = timeMatch[0].split(" - ")[0];
                                 template["dates"][0]["timeEnd"] = timeMatch[0].split(" - ")[1];
                             } else if (datastr.startsWith("Building")) {
-                                const buildingRegex = /(?<=Building:)[A-Z]+/;
+                                const buildingRegex = /(?<=Building:\s*)[A-Z]+/;
                                 const buildingMatch = decoded.match(buildingRegex);
 
                                 const roomRegex = /(?<=Room: )[A-Z0-9]+(?= \()/;
@@ -71,6 +99,7 @@ function parsePDF(pdf) {
                         datastr = "";
 
                         if (j === template_keys.length) {
+                            console.log(data)
                             data.push(template);
                             template = {class: {dept: "", num: "", section: "", full: ""}, name: "", campus: "", hours: 0, id: "", prof: "", dates: [{date: "", building: {name: "", room: "", type: ""}}]};
                             j = 0;
@@ -78,11 +107,15 @@ function parsePDF(pdf) {
                     }
                     i++;
                 }
+               
                 datastr = ""
                 i = 0
                 j = 0
+                data = getSchedule(data)
+
                 data = await require('./anex_schedule_parser').get_grades(data)
-                console.log(data)
+                data.user_name = template.campus
+                data.semester = decodeURIComponent(pdfData.Pages[1].Texts[0].R[0].T + pdfData.Pages[1].Texts[1].R[0].T)
                 resolve(data); // Resolve the promise with the parsed data
                 data = []
             } catch (error) {

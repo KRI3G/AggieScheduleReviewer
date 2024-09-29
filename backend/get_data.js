@@ -23,7 +23,15 @@ app.post('/backend/schedule', async function(req, res) {
     const base64String = req.body.data; // Access the Base64 string
     const pdf = base64ToArrayBuffer(base64String)
     const data = await readSchedule.parsePDF(pdf)
+    const json_object = JSON.stringify(data, null, 2);
 
+                require('fs').writeFileSync('../data/schedule.json', json_object, (err) => {
+                    if(err) { 
+                        console.error("Error writing JSON object to file", err);
+                    }else{
+                        console.log("JSON data successfully written to file!");
+                    }
+            });
     const ai_response = await require('./ai_response.js').generateReview(data)
     console.log(ai_response)
     res.send(ai_response)
