@@ -223,7 +223,8 @@ async function loadJSON(filePath) {
 // Function to find the RMP ID number of a given 
 async function getProfId(ultimateObj, classIndex) {
 	const profJSON = await loadJSON('../data/professors.json');
-	console.log(ultimateObj.data[classIndex].prof)
+	console.log(classIndex);
+	console.log(ultimateObj.data[classIndex].prof);
 	const profName = ultimateObj.data[classIndex].prof;
 
 	for (let currentProf = 0; currentProf < profJSON.data.length; currentProf++) {
@@ -232,6 +233,9 @@ async function getProfId(ultimateObj, classIndex) {
 			return profJSON.data[currentProf].tid;
 		}
 	};
+
+	// If professor not found, return blank
+	return "N/A";
 
 };
 
@@ -250,6 +254,10 @@ async function getProfRating(ultimateObj, classIndex) {
 // Function to get average ratings of professor
 async function getRatings(professor, classIndex) {
 	const professorId = await getProfId(professor, classIndex);
+	if (professorId == "N/A") {
+		const output = [];
+		return output;
+	}
 	console.log(professorId + " professor Id")
 	const rmpEndpoint = "https://www.ratemyprofessors.com/paginate/professors/ratings?tid=" + professorId + "&filter=&courseCode=&page=";
 
