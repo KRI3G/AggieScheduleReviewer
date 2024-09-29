@@ -36,7 +36,6 @@ function parsePDF(pdf) {
         let data = {classes: [], schedule: {}}
         let alreadyOn = false
         pdfParser.parseBuffer(pdf);
-        console.log("Under Promise")
         pdfParser.on("pdfParser_dataError", (errData) =>
             console.log(errData.parserError)
            );
@@ -44,10 +43,8 @@ function parsePDF(pdf) {
         pdfParser.on("pdfParser_dataReady", async (pdfData) => {
             if (alreadyOn) return; // I hate that i have to do this but I dont know how to fix it. we love bandaids!
             alreadyOn = true
-            console.log("Testing in PDF Parser Listener")
             try {
-                console.log("Data:")
-                console.log(data)
+  
                 let i = 10; // Actual data starts at index of 10
                 let template = {class: {dept: "", num: "", section: "", full: ""}, name: "", campus: "", hours: 0, id: "", prof: "", dates: [{date: "", days: [], timeStart: "", timeEnd: "", building: {name: "", room: "", type: ""}}]};
                 const template_keys = Object.keys(template);

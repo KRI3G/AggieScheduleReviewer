@@ -29,7 +29,8 @@ document.getElementById('pdf-form').addEventListener('submit', async function(ev
 
 
 async function retrieveData(buffer) {
-    
+    document.getElementById("main-menu").style.display = "none";
+    document.getElementById("loading").style.display = "block";
     const response2 = await fetch(`../backend/schedule`, {
         method: 'POST',
         body: JSON.stringify({ data: buffer }),
@@ -38,7 +39,12 @@ async function retrieveData(buffer) {
         }
       }).catch(e => console.log(e));
 
-      const data = await response2.json(response2);
-      console.log(data);
+      response2.json(response2).then(data => {
+        console.log(data);
+        document.getElementById("reveille_text_review").style.display = "block";
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("speech-bubble-text_review").textContent = data.prompt
+      });
+      
 
 }
