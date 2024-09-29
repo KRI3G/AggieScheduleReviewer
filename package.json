@@ -5,6 +5,7 @@
     "express": "^4.21.0",
     "fs": "^0.0.1-security",
     "node-fetch": "^2.7.0",
+    "pdf-lib": "^1.17.1",
     "pdf2json": "^3.1.4",
     "pdf2table": "^0.0.2",
     "puppeteer": "^23.4.1"

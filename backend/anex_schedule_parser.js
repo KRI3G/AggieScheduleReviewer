@@ -12,8 +12,7 @@ async function loadJSON(filePath) {
 }
 
 async function get_grades(schedule_data){
-  console.log(schedule_data);
-  const promises = schedule_data.map(async (class_data, i) => {
+  const promises = schedule_data.classes.map(async (class_data, i) => {
     const dept = class_data["class"]["dept"];
     const number = class_data["class"]["num"];
     const section = class_data["class"]["section"];
@@ -84,14 +83,8 @@ async function get_grades(schedule_data){
 
     } catch (error) {
       console.error("Error while grabbing JSON: ", error);
-      schedule_data[i]["grades"] = {
-        "data_available": false,
-        "data":{
-          "Average_GPA": null,
-          "A_percentage": null,
-          "Total_Students_Taught": null 
-        },
-        "past_classes": null
+      schedule_data.classes[i]["grades"] = {
+        "data_available": false
       };
     }
   });
