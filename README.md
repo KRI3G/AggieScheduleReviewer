@@ -16,3 +16,9 @@ The UI looks very clean, and the script overall is incredibly fast, to where we 
 We all learned a lot - how async works, how JS reads JSON objects, and how to work with a team through GIT.
 ## What's next for Aggie Schedule REViewer
 We realized after brainstorming that this is a legitamely helpful project, and we are considering fleshing it out to work for Galveston students, as well as perhaps giving alternative classes.
+
+## Image Gallery
+
+![image]([https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/347/datas/small.png](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/025/datas/gallery.jpg))
+![image]([https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/347/datas/small.png](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/027/datas/gallery.jpg))
+![image]([https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/347/datas/small.png](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/135/datas/gallery.jpg))
