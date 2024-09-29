@@ -1,6 +1,4 @@
-const pdf = require('pdf2json')
 
-const pdfParser = new pdf();
 function militaryTimeToMinutes(time) {
     // Split the time string into hours and minutes
     const [hours, minutes] = time.split(":").map(Number);
@@ -33,6 +31,8 @@ function getSchedule(data) {
 function parsePDF(pdf) {
     console.log("At start")
     return new Promise((resolve, reject) => {
+        const pdf_package = require('pdf2json')
+        const pdfParser = new pdf_package();
         let data = {classes: [], schedule: {}}
         let alreadyOn = false
         pdfParser.parseBuffer(pdf);
@@ -126,6 +126,7 @@ function parsePDF(pdf) {
                 data.semester = decodeURIComponent(pdfData.Pages[1].Texts[0].R[0].T + pdfData.Pages[1].Texts[1].R[0].T)
                 const newData = Object.assign({}, data)
                 data = {classes: [], schedule: {}}
+               
                 resolve(newData); // Resolve the promise with the parsed data
                 
             } catch (error) {

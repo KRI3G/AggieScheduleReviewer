@@ -12,7 +12,7 @@
     
     <link/>
     </head>
-    <body>
+    <body style = "overflow-y:hidden" id = "main-body">
         
         <div id = "main-menu">
             
@@ -23,6 +23,11 @@
                 <img src="Sign_png.png" alt="hanging sign" width="300">
                 <h1 class="title sign" >Howdy!</h1>
             </div>
+
+            <img src="rev_test.png" id="reveille" style = "transform: translateY(140%) scale(125%);">
+                <div id="speech-bubble-container" style = "transform: translateY(160%);">
+                    <div id="speech-bubble-text" style = "color: black; font-size: 30px; margin: 10px; text-align: center;">Howdy! Welcome to <b>Aggie Schedule REViewer!</b><br> Submit a PDF of your schedule to get a review from me!<br>Click "Help" for instructions on how to get your schedule!</div>
+                </div>
 
             
                
@@ -43,7 +48,6 @@
                 </div>-->
             
             </div>
-            <a href = "statistics.html" id = "to_statistics_hyperlink">Take me to more statistics uwu</a>
         </div>
 
         <div style = "display: none; transform: translateY(100%);" id = "loading">

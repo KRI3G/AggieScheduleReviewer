@@ -106,37 +106,12 @@ body {
     z-index:1;
 }
 
-#reveille{
-    position:absolute;
-    margin-left:-200px;
-    width: 500px;
-    height: 500px;
-    margin-top: 400px;
-}
+
 
 body{
     overflow-x:hidden;
 }
-#speech-bubble-container{
-    min-height: 400px;
-    min-width: 400px;
-    left:0;
-    bottom:0;
-    position:absolute;
-    text-align: center;
-    color:white;
-    display:none;
-}
-#speech-bubble-container img{
-    width:80%;
-    height:80%;
-}
-#speech-bubble-text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 #to_statistics_hyperlink{
     position:fixed;
     bottom:0;
@@ -286,7 +261,7 @@ th:last-child, td:last-child {
     margin-top: 20px;
 }
 
-#reveille-text-review {
+#reveille-text-review, #reveille-text {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -294,17 +269,17 @@ th:last-child, td:last-child {
     
 }
 /* Dog image styling */
-#reveille-review-container {
+#reveille-review-container, #reveille-container {
     margin-right: 20px;
 }
 
-#reveille-review {
+#reveille-review, #reveille {
     max-width: 250px;
     height: auto;
 }
 
 /* Speech bubble styling */
-#speech-bubble-review-container {
+#speech-bubble-review-container, #speech-bubble-container {
     position: relative;
     display: inline-block;
     background-color: #fff;
@@ -321,8 +296,10 @@ th:last-child, td:last-child {
     
 }
 
+#speech-bubble-container { max-width: 750px;}
+
 /* Adding the tail of the speech bubble */
-#speech-bubble-review-container::before {
+#speech-bubble-review-container::before, #speech-bubble-container::before {
     content: "";
     position: absolute;
     top: 20px;
@@ -335,7 +312,7 @@ th:last-child, td:last-child {
     
 }
 
-#speech-bubble-review-text {
+#speech-bubble-review-text, #speech_bubble-text {
     color: black;
 }
 

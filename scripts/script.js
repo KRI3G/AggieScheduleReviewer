@@ -34,6 +34,7 @@ document.getElementById('pdf-form').addEventListener('submit', async function(ev
 async function retrieveData(buffer) {
     document.getElementById("main-menu").style.display = "none";
     document.getElementById("loading").style.display = "block";
+    document.getElementById("main-body").style.overflowY = "auto";
     const response2 = await fetch(`../backend/schedule`, {
         method: 'POST',
         body: JSON.stringify({ data: buffer }),

@@ -43,8 +43,9 @@ function main(json_object){
         for(key of Object.keys(ratings_object)){
             if(key == "reviews") continue;
             if (key == "isMandatory") {
-                if (ratings_object[key] === true) { ratings_object[key] == "Yes"}
+                if (ratings_object[key] === true) { ratings_object[key] = "Yes"}
                 else if (ratings_object[key] === false) { ratings_object[key] = "No"}
+                
             }
             const ratings_div = document.createElement('td');
             ratings_div.innerHTML = ratings_object[key] == null ? "N/A": ratings_object[key];
