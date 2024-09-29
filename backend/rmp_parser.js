@@ -225,13 +225,23 @@ async function getProfId(ultimateObj) {
 	const profJSON = await loadJSON('../data/professors.json');
 	const profName = ultimateObj.data[0].prof;
 
-	console.log();
+	for (let currentProf = 0; currentProf < profJSON.data.length; currentProf++) {
+		const currentProfName = profJSON.data[currentProf].tFname + " " + profJSON.data[currentProf].tLname;
+		if (currentProfName == profName) {
+			return profJSON.data[currentProf].tid;
+		}
+	};
+
+};
+
+async function getProfRating(ultimateObj) {
+	const profJSON = await loadJSON('../data/professors.json');
+	const profName = ultimateObj.data[0].prof;
 
 	for (let currentProf = 0; currentProf < profJSON.data.length; currentProf++) {
 		const currentProfName = profJSON.data[currentProf].tFname + " " + profJSON.data[currentProf].tLname;
 		if (currentProfName == profName) {
-			console.log( "--- " + profName + " " + profJSON.data[currentProf].tid + " ---");
-			return profJSON.data[currentProf].tid;
+			return profJSON.data[currentProf].overall_rating;
 		}
 	};
 
@@ -242,28 +252,37 @@ async function getRatings(professor) {
 	const professorId = await getProfId(professor);
 	const rmpEndpoint = "https://www.ratemyprofessors.com/paginate/professors/ratings?tid=" + professorId + "&filter=&courseCode=&page=";
 
-	const pageQuery = await fetch(rmpEndpoint + "1");
-	const pageQueryData = await pageQuery.json();
-	const totalReviews = pageQueryData.remaining + 20
-	const totalPages = Math.ceil( totalReviews / 20 );
-	console.log("Pages: " + totalPages);
+	const rmpResponse = await fetch(rmpEndpoint + "1");
+	const rmpResponseData = await rmpResponse.json();
 	
-	for (page = 1; page <= totalPages; page++) {
-		const rmpResponse = await fetch(rmpEndpoint + "");
-		const rmpResponseData = await pageQuery.json();
-		
-		var userReviews[]
-		var overall
-		var attendance
-		var difficulty
+	var userReviews = [];
+	var overall = await getProfRating(professor);
+	var attendance = 0;
+	var difficulty = 0;
 
-		for (let review in rmpResonseData.ratings) {
-			
-		}
-	}
+	for (let reviewNum in rmpResponseData.ratings) {
+		var review = rmpResponseData.ratings[reviewNum]
+		userReviews.push(review.rComments);
+		if (review.attendance == "Mandatory") {
+			attendance++
+		};
+		difficulty += review.rEasy
+	};
 
+	var output = [];
+	output.push(userReviews);
+	output.push(parseFloat(overall));
+	if (attendance/20 > .5) {
+		var isMandatory = true;
+	} else {
+		var isMandatory = false;
+	};
+	output.push(isMandatory);
+	output.push(difficulty/20);
 
-}
+	// [All reviews, Overall Rating, is attendance mandatory, difficulty]
+	return output;
+};
 
 // Rate My Professor endpoint for ratings, page missing
 //const rmpEP = 'https://www.ratemyprofessors.com/paginate/professors/ratings?tid=2590541&filter=&courseCode=&page=';
