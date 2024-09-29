@@ -53,7 +53,13 @@ async function get_grades(schedule_data){
       if (new_list.length === 0) {
         console.log('zero length');
         schedule_data.classes[i]["grades"] = {
-          "data_available": false
+          "data_available": false,
+          "data": { 
+          "Average_GPA" : "N/A",
+          "A_percentage": "N/A",
+          "Total_Students_Taught": "N/A"
+        },
+        "past_classes": "N/A"
         };
         return;
       }
@@ -72,7 +78,7 @@ async function get_grades(schedule_data){
       past_classes.splice(2);
 
       analytics["Average_GPA"] = (gpa_sum / classes).toFixed(2);
-      analytics["A_percentage"] = ((a_sum / n_students) * 100).toFixed(2);
+      analytics["A_percentage"] = ((a_sum / n_students) * 100).toFixed(2) + "%";
       analytics["Total_Students_Taught"] = n_students;
 
       schedule_data.classes[i]["grades"] = {
@@ -80,6 +86,8 @@ async function get_grades(schedule_data){
         "data": analytics,
         "past_classes": past_classes
       };
+
+      console.log(schedule_data.classes[i]["grades"].data)
 
     } catch (error) {
       console.error("Error while grabbing JSON: ", error);

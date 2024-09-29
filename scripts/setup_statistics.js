@@ -4,7 +4,7 @@ function main(json_object){
     const tbody = document.querySelector('table tbody');
     const body = document.querySelector('body');
     // [[All reviews], Overall Rating, is attendance mandatory, difficulty]
-    let columns = ["Class Name", "Professor", "Data available?", "Average GPA","A Percentage","Total students taught","Overall Rating","Is Attendance Mandatory?", "Difficulty"];
+    let columns = ["Class Name", "Professor", "Average GPA","% Of Students with an A","Total students taught","Overall Rating","Is Attendance Mandatory?", "Difficulty"];
 
     for(const column of columns){
         const header_div = document.createElement('th');
@@ -25,29 +25,31 @@ function main(json_object){
         table_row.appendChild(professor_div);
 
         const grades_object = class_object.grades;
-        const data_available_div = document.createElement('td');
-        data_available_div.innerHTML = grades_object.data_available;
-        table_row.appendChild(data_available_div);
-
+    
         console.log(grades_object);
 
-        if (!grades_object.data_available) {
-            data_object[key] = "N/A"
-        }
-        const data_object = grades_object.data;
-        for(key of Object.keys(data_object)){
-            const data_div = document.createElement('td');
-            data_div.innerHTML = data_object[key] == null ? "N/A": data_object[key];
-            table_row.append(data_div);
-        }
+        
+            const data_object = grades_object.data;
+            for(key of Object.keys(data_object)){
+                
+                const data_div = document.createElement('td');
+                data_div.innerHTML = data_object[key] == null ? "N/A": data_object[key];
+                table_row.append(data_div);
+            }
 
         
         const ratings_object = class_object.ratings;
+        console.log(ratings_object)
         for(key of Object.keys(ratings_object)){
             if(key == "reviews") continue;
+            if (key == "isMandatory") {
+                if (ratings_object[key] === true) { ratings_object[key] == "Yes"}
+                else if (ratings_object[key] === false) { ratings_object[key] = "No"}
+            }
             const ratings_div = document.createElement('td');
-            ratings_object.innerHTML = ratings_object[key] == null ? "N/A": ratings_div[key];
+            ratings_div.innerHTML = ratings_object[key] == null ? "N/A": ratings_object[key];
             table_row.append(ratings_div);
+            
         }
         
 

@@ -2,221 +2,536 @@
   "classes": [
     {
       "class": {
-        "dept": "ENGR",
-        "num": "102",
-        "section": "549",
-        "full": "ENGR-102-549"
-      },
-      "name": "ENGR LAB I COMPUTATION-GV",
-      "campus": "CS",
-      "hours": "2",
-      "id": "47561",
-      "prof": "Ahmed Al-Ramthan",
-      "dates": [
-        {
-          "date": "2024-08-19 / 2024-12-10",
-          "days": [
-            "M"
-          ],
-          "timeStart": "17:01",
-          "timeEnd": "18:00",
-          "building": {
-            "name": "CLB",
-            "room": "103",
-            "type": "LAB"
-          }
-        },
-        {
-          "date": "2024-08-19 / 2024-12-10",
-          "days": [
-            "W"
-          ],
-          "timeStart": "16:10",
-          "timeEnd": "18:00",
-          "building": {
-            "name": "CLB",
-            "room": "103",
-            "type": "LAB"
-          }
-        },
-        {
-          "date": "2024-08-19 / 2024-12-10",
-          "days": [
-            "M"
-          ],
-          "timeStart": "16:10",
-          "timeEnd": "17:00",
-          "building": {
-            "name": "CLB",
-            "room": "103",
-            "type": "LEC"
-          }
-        }
-      ],
-      "grades": {
-        "data_available": false
-      }
-    },
-    {
-      "class": {
         "dept": "CHEM",
         "num": "107",
-        "section": "405",
-        "full": "CHEM-107-405"
+        "section": "504",
+        "full": "CHEM-107-504"
       },
       "name": "GEN CHEM FOR ENGINEERS",
-      "campus": "GV",
+      "campus": "CS",
       "hours": "3",
-      "id": "30428",
-      "prof": "Carl Aronson",
+      "id": "10535",
+      "prof": "Alicia Altemose",
       "dates": [
         {
           "date": "2024-08-19 / 2024-12-10",
-          "building": {
-            "name": "MAIN",
-            "room": "117",
-            "type": "LEC"
-          },
           "days": [
-            "T",
-            "R"
+            "M",
+            "W",
+            "F"
           ],
-          "timeStart": "09:35",
-          "timeEnd": "10:50"
+          "timeStart": "13:50",
+          "timeEnd": "14:40",
+          "building": {
+            "name": "ILCB",
+            "room": "111",
+            "type": "LEC"
+          }
         }
       ],
       "grades": {
-        "data_available": false
+        "data_available": true,
+        "data": {
+          "Average_GPA": "3.09",
+          "A_percentage": "36.86%",
+          "Total_Students_Taught": 1389
+        },
+        "past_classes": [
+          {
+            "dept": "CHEM",
+            "number": "107",
+            "section": "501",
+            "A": "95",
+            "B": "132",
+            "C": "88",
+            "D": "18",
+            "F": "8",
+            "I": "0",
+            "S": "0",
+            "U": "0",
+            "Q": "24",
+            "X": "0",
+            "prof": "ALTEMOSE A",
+            "year": "2023",
+            "semester": "SPRING",
+            "gpa": "2.84457478005865"
+          },
+          {
+            "dept": "CHEM",
+            "number": "107",
+            "section": "501",
+            "A": "171",
+            "B": "90",
+            "C": "36",
+            "D": "3",
+            "F": "3",
+            "I": "0",
+            "S": "0",
+            "U": "0",
+            "Q": "10",
+            "X": "0",
+            "prof": "ALTEMOSE A",
+            "year": "2023",
+            "semester": "FALL",
+            "gpa": "3.3960396039604"
+          }
+        ]
+      },
+      "ratings": {
+        "reviews": [
+          "She tries to make the class fun and does a good job of teaching the content.",
+          "She's really nice but you mostly learn from homework. Lectures are just her reading directly off the slides and she'll rush important topics. I learned everything from the ALEKS homework. If you don't mind teaching yourself you'll do well. Participation is taken in every lecture by doing iClicker questions.",
+          "Class was the hardest class I took. Im bad at chemistry and didnt put much work into it. Shouldve ended with a C but somehow secure the B. Her quizzes are insanely hard and are proctored online. A lot of extra credit and very reasonable with extensions. She's honestly a great professor",
+          "Altemose was a very chill and caring professor. The class itself isn't that difficult but sometimes the quizzes can be weird and difficult, exams weren't terrible. Put in a little effort to study and it should be at least an easy B.",
+          "She is the GOAT. My favorite prof ever. She knew my name after I had only gone to a few office hours. The HW can sometimes take a while, but are manageable if you start early. The HW are the best way to learn. Dr. A really cares about the students, and you can always go to her with any problem you are having. 100% hope to have her in a later class.",
+          "She was a good lecturer and cares about her students. I wouldn't take her again but that's just me; I would still recommend her class. Be prepared to read the slides and know them well for quizzes and exams though.",
+          "Literally the sweetest human being on the planet. She's so nice and willing to help you if you reach out. Honestly, the only people I know who had a problem with this class are people who thought they could get by without studying or going to class (so, their fault not the professor's). If you put in the effort you'll be gucci.",
+          "I'm tempted to give her 1 star because of inflated her rating is in my opinion. Everyone left lectures visibly confused and her teaching style wasn't effective at all. Only went to class for iclicker, and learned through SI sessions and Professor Dave on youtube. You can barely see her in class \"experiments\" that also get no explanation. Annoying.",
+          "Dr. Altemose is an amazing professor for CHEM 107. She has engaging lectures and is a very approachable person for questions. She responds to emails very quickly and is happy to help. She teaches the material very well. Attendance isn't mandatory, but she does use iClicker that is part of your grade. Lots of HW, two tests and 6 quizzes w/ one drop.",
+          "Dr. Altemose is a great professor and very accessible outside of class.Quizzes were the hardest part of this course but make sure to do the end-of-chapter problems and the homework and you should be good.The midterm and the final are easy if you prepare well (do A LOT of practice).\nDefinitely take Dr. Altemose if you can, she's the best.",
+          "The best part about CHEM107 with Dr. Altemose was the fact that she recorded every lecture and posts them on Canvas. Her lectures are helpful but not exactly engaging. The quizzes are easily the hardest part of her class, followed by the midterm and final; make sure to do well on those and you have an A.",
+          "Very easy class and teaches chemistry in a great way for those who are exposed to it for the first time. Attendance was mandatory in the sense that you had to complete participation activities while in class for a grade but other than that the class was great. Would reccomend.",
+          "She was really nice and definitely need to go to lectures for the clicker points and her clicker points are easy to get 100 on and provides extra credit. Everything was good except the quizzes are really heavy on grade so study for them, it was the only reason I got a B and not an A. ",
+          "Really nice teacher, provides up to 3 bonus pts on semester avg from extra credit. Teaches a little bit slowly but that's honestly fine. She is always willing to help if you have questions. Quizzes are weighed an absurd amount so take those very, very seriously.",
+          "She is very kind. If you go to classes you should be fine. DON'T take your quizzes as a joke study for them.",
+          "Dr. Altemose is super nice, her lecture explains things very well, and she always willing to help students outside of class. She host help sessions very often. 6 quizzes, 2 exams. Don't skip classes, and you will be fine",
+          "Fun & passionate teacher. Has 6 sort of hard quizzes (lowest one dropped) & 2 tests (midterm and final). Quizzes & midterm are online & can be taken anytime during the day it opens. Final is also online. Very willing to help students outside of class. Records lectures and posts filled notes but uses iClicker to keep attendance up. Must study.",
+          "Great and passionate lecturer. Attendance is a good portion of your final grade. Weekly homework that takes quite a bit of time to finish but is great preparation for the five quizzes we have over the semester. Only a midterm and a final exam. Skipping lectures is an easy way to fall behind. Great feedback on quizzes and easy-to-follow lectures.",
+          "Super nice person, she's not the best lecturer as she's always a bit behind but she gets the job done. The class is fairly hard as not many engineers are good at chem but if you do average on quizzes/exams you should be fine.",
+          "Dr. A is a great prof to take for Chem 107. Her lectures start slow at the beginning of the year and speed up a lot towards the end. All quizzes are taken outside of class online and so is the first exam. She releases feedback on all the quizzes and is very caring and willing to help students. One of the best general chem profs."
+        ],
+        "overall": 3.5,
+        "isMandatory": true,
+        "difficulty": 2.85
       }
     },
     {
       "class": {
         "dept": "CHEM",
         "num": "117",
-        "section": "408",
-        "full": "CHEM-117-408"
+        "section": "550",
+        "full": "CHEM-117-550"
       },
       "name": "GEN CHEM FOR ENGR LAB",
-      "campus": "GV",
+      "campus": "CS",
       "hours": "1",
-      "id": "30334",
-      "prof": "Grace Townsend",
+      "id": "26322",
+      "prof": "Zachary Martinez",
       "dates": [
         {
           "date": "2024-08-19 / 2024-12-10",
           "building": {
-            "name": "MAIN",
-            "room": "310",
+            "name": "ILSQ",
+            "room": "E311",
             "type": "LAB"
           },
           "days": [
-            "W"
+            "T"
           ],
-          "timeStart": "08:00",
-          "timeEnd": "10:50"
+          "timeStart": "14:20",
+          "timeEnd": "17:10"
         }
       ],
       "grades": {
-        "data_available": false
+        "data_available": true,
+        "data": {
+          "Average_GPA": "3.50",
+          "A_percentage": "59.85%",
+          "Total_Students_Taught": 3001
+        },
+        "past_classes": [
+          {
+            "dept": "CHEM",
+            "number": "117",
+            "section": "501",
+            "A": "9",
+            "B": "14",
+            "C": "0",
+            "D": "0",
+            "F": "1",
+            "I": "0",
+            "S": "0",
+            "U": "0",
+            "Q": "0",
+            "X": "0",
+            "prof": "MARTINEZ Z",
+            "year": "2023",
+            "semester": "FALL",
+            "gpa": "3.25"
+          },
+          {
+            "dept": "CHEM",
+            "number": "117",
+            "section": "502",
+            "A": "16",
+            "B": "4",
+            "C": "3",
+            "D": "1",
+            "F": "0",
+            "I": "0",
+            "S": "0",
+            "U": "0",
+            "Q": "0",
+            "X": "0",
+            "prof": "MARTINEZ Z",
+            "year": "2023",
+            "semester": "FALL",
+            "gpa": "3.45833333333333"
+          }
+        ]
+      },
+      "ratings": {
+        "reviews": [
+          "He is my favorite professor!!His lectures were always engaging and truly made me understand chemistry. Although it was difficult, he gave you all the resources you needed to succeed! He always gave great feedback on quizzes/tests and was always available outside of class. He also had extra credit on tests and a project. Super understanding as well.",
+          "DOABLE A. Do NOT skip the extra cred posted near semester's end. His grading policies work for you and are lenient. Show up to class for Iclicker. Make sure to go to SI for material covered after exam 2, gets difficult. For quizzes, you can make a study group, shhh. You WILL do great on the final if you covered acids and bases well w/ practice.",
+          "Dr. Martinez is my favorite college professor of my career thus far! His lectures are very informative and interactive via IClicker, he is very easy to reach via his Office Hours, he has amazing TAs, and he isn't afraid to put some humor and his dogs into his lectures! The people saying he is overhyped just don't like Chem, this guy is awesome!",
+          "He teaches very well however his quizzes and exams are very very hard. First exam I got a 90 then it just kept getting worse. He is very helpful but he likes challenging his students with very hard questions on the tests. ",
+          "Martinez is one of the best professors I have had and he wants his students to succeed. He teaches the material very well and gives lots of examples during class. His homework is challenging but prepares you for the exams. There is a lot of class participation, which boosts your grade and is good practice. Class is heavily math based.",
+          "He definitely cares a lot about his students understanding the material, however his tests are very hard compared to the problems that we do in class. If you ask him for help and attend TA sessions, a high A is very attainable. In this course you will get out what you put in. He also offers a lot of extra credit and curves quizzes. TESTS NOT CURVED",
+          "Dr. Martinez is a great prof but he definitely wants to challenge his students, so his test are difficult and you have to prepare. His class has lots of example problems but the workload isn't bad. Lots of assignments are conceptual, so if you don't understand ASK. He is super easy to contact, and was always willing to meet for office hours. ",
+          "Dr. Martinez's cares about his students and is helpful in office hours. It is essential to understand the iclicker problems and WPA's to do well on the quizzes; understanding the study guide will prepare you for the tests. Tests are heavy on application of the lecture material and critical thinking, so connecting concepts while studying is a must.",
+          "Martinez's lectures are engaging with frequent iClicker questions per lecture. WPAs are challenging but offer multiple attempts; understanding it ensures success in quizzes/exams. SI sessions are helpful. Regular effort everyday is essential.\n\n\n\n\n\n\n",
+          "Martinez is really fun and very understanding! Attendance is not \"mandatory\" but there are iclicker questions in class that count for a grade (you only need 75% of questions to get full credit). Aleks assignments (easy), weekly practice assignments (easy), 4 quizzes (kinda hard but you don't need all points to get full credit). put in work, ex cred",
+          "I was never a big chemistry person, but Martinez made his class very interesting and easy to engage with. He offered extra credit opportunities at the end which was huge.",
+          "Honestly I don't understand the hype. He gets the job done but there are no demos and made chem so boring imo, which is a shame. Ppl just like his dog... It was unclear what your avg was, and it's easy to let your grade slip. Could have easily gotten an A, wish I tried a little harder. If you took AP chem it's easy money but don't be TOO careless.",
+          "Spectacular prof. His lectures are amazing and he explains step by step how to do problems. Beware of quizzes and tests as they're pretty hard. As long as you do the practice exam and study you should do fine. Don't let WPAs and ALEKS pile up before their deadline as they're pretty time consuming. Final replaces lowest exam score",
+          "He tries to be like Dr. Edwards with the WPA's but the quizzes and exams are so hard. He is very boring in lecture and can barely read his handwriting. There are iClicker points, but if you tend to not go to class, it will bring your grade down more than up. He also does not curve anything even when 20% of the class got an F on a quiz. ",
+          "Dr.Martinez is a good lecturer and explains concepts well. However, he has the most difficult tests among all chemistry professors and is not someone that you should take if you are trying to get a good grade in the class. You will have to work extremely hard for an A and even then its not guaranteed. ",
+          "This guy is phenomenal. You can tell that he loves chemistry and his passion translates to the class. His method of teaching and giving quizzes and tests are so good. This is a difficult course, but Dr. Martinez makes it as doable as possible as long as you do what he asks. This means weekly assignments, class participation, and youll get an A",
+          "Bro is chill af. Cool guy, great teacher. All around least painful CHEM 120 experience you could ask for",
+          "Dr. Martinez the goat. He writes on his slideshows to explain concept. Honestly, the homework was not very helpful for the quizzes or exams, but the workout problems on his slides are almost identical to the quizzes besides numbers. A very fast responder with email and gave a lot of points for an extra credit assignment. Handwriting could be better",
+          "He is the GOAT! His lectures always start with a picture of his dogs, Ruby and Cobalt. Although his handwriting can be a bit hard to understand, it is bearable. He is accessible outside of class and will help you out on the topics that you are stuggling on.",
+          "This might be the best professor at Texas A&M. He cares so much about his class and students. He's so good at explaining things, he's very quick to respond to emails, and his quizzes and tests are fair and relate to the lecture materials. He records lectures and posts them on canvas, but there are iClickers in class so you need to come."
+        ],
+        "overall": 4.7,
+        "isMandatory": true,
+        "difficulty": 3.7
       }
     },
     {
       "class": {
-        "dept": "CLGV",
-        "num": "001",
-        "section": "417",
-        "full": "CLGV-001-417"
+        "dept": "CLEN",
+        "num": "181",
+        "section": "537",
+        "full": "CLEN-181-537"
       },
-      "name": "HU: Light House LLC",
-      "campus": "GV",
+      "name": "ENGR LC SUCCESS SEMINAR",
+      "campus": "CS",
       "hours": "0",
-      "id": "31659",
-      "prof": "Jillian Sanchez",
+      "id": "43280",
+      "prof": "Taylor Northcut",
       "dates": [
         {
           "date": "2024-08-19 / 2024-12-10",
           "building": {
-            "name": "PMEC",
-            "room": "239",
-            "type": "INS"
+            "name": "ZACH",
+            "room": "360",
+            "type": "SEM"
           },
           "days": [
-            "F"
+            "W"
           ],
-          "timeStart": "12:00",
-          "timeEnd": "12:50"
+          "timeStart": "12:40",
+          "timeEnd": "13:30"
         }
       ],
       "grades": {
-        "data_available": false
+        "data_available": false,
+        "data": {
+          "Average_GPA": "N/A",
+          "A_percentage": "N/A",
+          "Total_Students_Taught": "N/A"
+        },
+        "past_classes": "N/A"
+      },
+      "ratings": {
+        "reviews": [],
+        "overall": "N/A",
+        "isMandatory": "N/A",
+        "difficulty": "N/A"
+      }
+    },
+    {
+      "class": {
+        "dept": "ENGR",
+        "num": "102",
+        "section": "505",
+        "full": "ENGR-102-505"
+      },
+      "name": "ENGR LAB I COMPUTATION",
+      "campus": "CS",
+      "hours": "2",
+      "id": "36091",
+      "prof": "Craig Spears",
+      "dates": [
+        {
+          "date": "2024-08-19 / 2024-12-10",
+          "days": [
+            "W"
+          ],
+          "timeStart": "17:10",
+          "timeEnd": "19:00",
+          "building": {
+            "name": "ZACH",
+            "room": "353",
+            "type": "LAB"
+          }
+        },
+        {
+          "date": "2024-08-19 / 2024-12-10",
+          "days": [
+            "M"
+          ],
+          "timeStart": "18:01",
+          "timeEnd": "19:00",
+          "building": {
+            "name": "ZACH",
+            "room": "353",
+            "type": "LAB"
+          }
+        },
+        {
+          "date": "2024-08-19 / 2024-12-10",
+          "building": {
+            "name": "ZACH",
+            "room": "353",
+            "type": "LEC"
+          },
+          "days": [
+            "M"
+          ],
+          "timeStart": "17:10",
+          "timeEnd": "18:00"
+        }
+      ],
+      "grades": {
+        "data_available": true,
+        "data": {
+          "Average_GPA": "3.21",
+          "A_percentage": "39.03%",
+          "Total_Students_Taught": 1924
+        },
+        "past_classes": [
+          {
+            "dept": "ENGR",
+            "number": "102",
+            "section": "216",
+            "A": "15",
+            "B": "5",
+            "C": "1",
+            "D": "1",
+            "F": "0",
+            "I": "0",
+            "S": "0",
+            "U": "0",
+            "Q": "0",
+            "X": "0",
+            "prof": "SPEARS C",
+            "year": "2018",
+            "semester": "FALL",
+            "gpa": "3.54545454545455"
+          },
+          {
+            "dept": "ENGR",
+            "number": "102",
+            "section": "217",
+            "A": "24",
+            "B": "10",
+            "C": "3",
+            "D": "0",
+            "F": "0",
+            "I": "0",
+            "S": "0",
+            "U": "0",
+            "Q": "0",
+            "X": "0",
+            "prof": "SPEARS C",
+            "year": "2018",
+            "semester": "FALL",
+            "gpa": "3.56756756756757"
+          }
+        ]
+      },
+      "ratings": {
+        "reviews": [
+          "Professor Spears was great! He really cared about the content and made the class applicable to life after college. Incredibly nice man! The main grade is the group project which you work on the entire semester. There are weekly homeworks and participation every class. The class is pass/fail, but simple to pass if you just do the assignments. ",
+          "He is very Nice and all his lectures are interesting. Assignments are Straight forward.",
+          "Great professor with years of industry experience and interesting lectures. I wish I would have taken his section for ENGR 102.",
+          "You can't go wrong taking him for ENGR 102. His lectures are very concise, engaging, and always cover relevant material. Quizzes and finals are difficult, but between the extra credit and resources provided, there is enough leeway to easily get an A. ",
+          "Professor Spears was great, and I'm glad to have had him for a pretty difficult class (ENGR 102). I felt like I could approach him with any questions I had, and his lectures were always very relevant, interesting, and humorous. I feel like Spears might be the best ENGR 102 professor at A&M.",
+          "Arguably the best prof you could have for 102. The class is tough by nature but Spears makes the coursework very navigable. He is funny and engaging and willing to help you with any confusion you may have. However, out of the two exams you will have, you NEED to study more than you think you should for both. Especially for the final.",
+          "I took him for honors, and Professor Spears was incredible, with helpful demonstrations in class. Very caring. Lectures and Zybooks are done yourself outside of class. Most of class time was for the group labs; make sure you get a group with a mix of experience. Exams are very difficult, but the quizzes and individual labs were fine. Love Frodo ",
+          "Mr. Spears is a great prof. This class will be very hard if you have never coded before so be ready. If you have experience in python you'll be able to basically breeze through it no problem. Exams are difficult and are pretty heavily weighted so be ready for them. A good amount of extra credit is given throughout the course which you should do.",
+          "Funny professor, often shares pics of his adorable dog, Frodo. Has weekly quizzes, reading assignments (lecture notes and zyBook modules), and individual and team coding labs, all of which helps with studying for tests. Only 2 tests (midterm & final) that add up to 45% of overall grade. Gives some extra credit (usually an extra lab assignment).",
+          "Spears is a pretty good professor and he is also funny. You have to read a lot of chapters each week followed by individual, team coding labs, and weekly quizzes. The coding labs were sometimes fun to work on, coming from a non-coder. He also gives out a decent amount of extra credit. TA's are also very helpful.",
+          "His lectures aren't super helpful, and the TAs are what I mainly learned from.\n\nHe also has the toughest quizzes out of every other ENGR102 teacher (from what I've heard), and he does offer some extra credit, but not a ton. The quizzes do help the most with the exams, which are pretty difficult.\n\nTake him if you're willing to work outside of class.",
+          "Best teacher ever. He does a good job preparing you for everything. Quizzes are moderate. He's a lurker though, so beware he may pop up behind you. ",
+          "He's a good teacher with a solid teaching style with good lectures. But compared to every other prof, he is by far the hardest. His quizzes are significantly harder and he does not curve. I'd take somebody else.",
+          "Mr. Spears is so great, if you can def take him for 102. He's so nice and makes it so even people without coding experience can learn.",
+          "Take Spears! He's a great prof. So much fun in class, tons of extra credit opportunities, and he routinely takes the difficult individual labs and makes them group labs for us. I've watched my friends with other profs struggle through assignments we didn't even have to do.",
+          "He really tries to teach you the best way possible and he knows how. He doesn't try to assign things that are useless and genuinely considers student feedback. This year he made multiple in-class changes purely based off a mid-semester feedback form he created himself. ENGR 102 can be a tough class but its not because of him.",
+          "Amazing professor! Really enjoyed his lectures and he made an effort to make all of his classes fun and engaging. Loved his class so much that I even came back to PT for him. Exams are indeed very hard but if you keep up with lecture, reading, and homework then it is definitely manageable.",
+          "Great professor and a nice guy overall. Material is well explained in detailed slides. Group projects can be a nightmare as it's up to you to stay on top of teammates after class. Read grading rubrics for reports carefully, some TAs are downplaying the importance of details but the actual grader will penalize heavily if the report is incomplete.",
+          "Professor Spears is a great professor. The material was easy for me, but he does a great job at dumbing it down for you to understand. Material is universal to all ENGR 216 classes, and some of the stuff is learned in 206 anyway, so be prepared for that. There are not many grades, and half of it is labs anyways, so make sure to do all the work.",
+          "Spears is one of the best general engineering profs. He is so kind and passionate about coding. Gives very detailed, slow, easy to follow lectures. Doesn't livestream or post recorded lectures. 102 is an intro to Python. Uses ZyBooks (so a decent amount of reading if you want to be well prepared). Weekly HWs, and short 4-person group assignments."
+        ],
+        "overall": 4.4,
+        "isMandatory": true,
+        "difficulty": 2.75
       }
     },
     {
       "class": {
         "dept": "MATH",
         "num": "251",
-        "section": "401",
-        "full": "MATH-251-401"
+        "section": "521",
+        "full": "MATH-251-521"
       },
       "name": "ENGINEERING MATH III",
-      "campus": "GV",
+      "campus": "CS",
       "hours": "3",
-      "id": "30391",
-      "prof": "Cong Kang",
+      "id": "45423",
+      "prof": "Tomasz Mandziuk",
       "dates": [
         {
           "date": "2024-08-19 / 2024-12-10",
           "building": {
-            "name": "MAIN",
-            "room": "218",
+            "name": "HELD",
+            "room": "113",
             "type": "LEC"
           },
           "days": [
-            "T",
-            "R"
+            "M",
+            "W",
+            "F"
           ],
-          "timeStart": "15:55",
-          "timeEnd": "17:10"
+          "timeStart": "08:00",
+          "timeEnd": "08:50"
         }
       ],
       "grades": {
-        "data_available": false
+        "data_available": false,
+        "data": {
+          "Average_GPA": "N/A",
+          "A_percentage": "N/A",
+          "Total_Students_Taught": "N/A"
+        },
+        "past_classes": "N/A"
+      },
+      "ratings": {
+        "reviews": [],
+        "overall": "N/A",
+        "isMandatory": "N/A",
+        "difficulty": "N/A"
       }
     },
     {
       "class": {
-        "dept": "STAT",
-        "num": "211",
-        "section": "400",
-        "full": "STAT-211-400"
+        "dept": "POLS",
+        "num": "207",
+        "section": "517",
+        "full": "POLS-207-517"
       },
-      "name": "PRIN OF STATISTICS I",
-      "campus": "GV",
+      "name": "STATE & LOCAL GOVT",
+      "campus": "CS",
       "hours": "3",
-      "id": "31875",
-      "prof": "Carmen Acero-Schertzer",
+      "id": "57628",
+      "prof": "Jason Smith",
       "dates": [
         {
           "date": "2024-08-19 / 2024-12-10",
           "building": {
-            "name": "KIRK",
-            "room": "207",
+            "name": "ILCB",
+            "room": "111",
             "type": "LEC"
           },
           "days": [
-            "T",
-            "R"
+            "M",
+            "W",
+            "F"
           ],
-          "timeStart": "11:10",
-          "timeEnd": "12:25"
+          "timeStart": "15:00",
+          "timeEnd": "15:50"
         }
       ],
       "grades": {
-        "data_available": false
+        "data_available": true,
+        "data": {
+          "Average_GPA": "3.52",
+          "A_percentage": "58.99%",
+          "Total_Students_Taught": 17460
+        },
+        "past_classes": [
+          {
+            "dept": "POLS",
+            "number": "207",
+            "section": "200",
+            "A": "58",
+            "B": "118",
+            "C": "67",
+            "D": "8",
+            "F": "3",
+            "I": "2",
+            "S": "0",
+            "U": "0",
+            "Q": "2",
+            "X": "0",
+            "prof": "SMITH J",
+            "year": "2012",
+            "semester": "SUMMER",
+            "gpa": "2.8661417322834644"
+          },
+          {
+            "dept": "POLS",
+            "number": "207",
+            "section": "501",
+            "A": "63",
+            "B": "143",
+            "C": "72",
+            "D": "12",
+            "F": "8",
+            "I": "0",
+            "S": "0",
+            "U": "0",
+            "Q": "6",
+            "X": "0",
+            "prof": "SMITH J",
+            "year": "2012",
+            "semester": "FALL",
+            "gpa": "2.8087248322147653"
+          }
+        ]
+      },
+      "ratings": {
+        "reviews": [
+          "Was a great and funny professor. Learned a lot. ",
+          "Professor Smith is an engaging lecturer with a great sense of humor. While his tests can be challenging, using resources like unstuckstudy ai alongside the textbook and attending class can really help. Overall, an enjoyable and rewarding course if you're willing to put in the work.",
+          "Professor Smith is funny in his many rants during lecture, but takes a long time to get to the info that will be on tests. The exam reviews are most of the content on exams. Extra credit is given the day before every exam. Most of your grade comes from the exams, and he drops a couple of quiz grades.  ",
+          "Awesome professor made a boring class so much better and as long as you go to lectures you'll know what you need for the test.",
+          "He does a good job of covering the content that will be on exams. Attendance is not mandatory, but in class he mentions things that will be on exams, so going will help a lot. He posts lecture slides but they are more of just an outline for what he will talk about, not details of what you need to know.",
+          "He really doesn't go on as many tangents during lectures as people say (At least not that I could tell). Dad humor, encourages you to go make informed votes, gives you 80% of the exam in lecture and other 20% in textbook readings. Also gives a study guide for each test. Weighted exams (best exam worth most). No cumulative final. ",
+          "Dr. Smith is easily the funniest prof I've had so far at TAMU, lectures are entertaining for a subject I don't enjoy all that much. Tests can be difficult if you don't pay attention or attend lectures, so I highly recommend you attend his lectures and take notes! Overall, Dr. Smith made a boring class fun, and I would highly recommend you take him!",
+          "Took him for POLS 207, funniest man alive, but I could not understand his tests. Studied more for his final than my 2 400 level math classes combined and barely scraped by with an A in the class. Still the most interesting professor I have ever taken.",
+          "Extremely heavy weighted exams with the most random questions. Filled out the study guide for each exam, read the textbook, used quizlets to study, and STILL wouldn't be fully prepared cause some stuff wasn't on any of those. This class was harder than my OCHEM classes because of how random the exam questions were, and I got A's in both of those.",
+          "Dr. Smith was a super funny guy and his class was not too hard. 3 exams, no final, and 16 or so chapter quizzes, and he only takes the 10 highest. Lectures kinda matter, since he doesn't post the content anywhere else, and the tests can be kind of difficult just depending on how much you are reading the textbook and going to class.",
+          "Most of the exams can be self-studied through Quizlets and the review he leaves. Although I got a B and did not attend class, most of his lectures are tangents and he does not go over the material well. He offers 1 extra credit opportunity and exams and quizzes are factored heavily in your grade. Would recommend other professors. ",
+          "Definitely go to class. He has dad humor, which kept class interesting. I found that the tests were a lot harder than what was on the study guides and it's hard to make an A on them. Quiz answers in textbook and drops some of those and packbacks. He definitely made the class more enjoyable but was still hard to follow his lectures sometimes. ",
+          "Over all prof Smith was very good. I enjoyed my time in class as he made it a fun environment to learn in. While there are a lot of assignments to help balance out your grade, doing well on the exams is crucial to doing well in the class. I found the final to be the most difficult as it didn't seem to relate to the other two tests and very tedious",
+          "Maybe the GOAT of the POLS department. His lectures were as hilarious as they were genuinely educational. Definitely would recommend.",
+          "Packback discussions, Chapter quiz, and tests are what make up your grade. Smith gives a study guide for each test and if you thoroughly fill it out and study it you should make an 80+ on every exam. He does go on tangents and his lecture is not mandatory but I feel like it helps to go for some of the test material. Rarely gives extra credit. ",
+          "You definitely have to go to class, even though attendance isn't mandatory. This class is test heavy. Some of the test questions are definitions/pretty straightforward, but for the rest you definitely need to apply stuff from the textbooks and lectures. You're definitely not going to get the TEST questions from quizlet, but not too bad. ",
+          "This class is really easy if you just go to lectures.",
+          "lectures were not productive because he uses them to go on tangents and talk about stuff that was not content related, doesn't post slides on canvas until after they are discussed in class which makes it hard to follow along. Test are inconsistent with material and wording on them is confusing. Test are 75% of course grade- would not take him again",
+          "Professor Smith is my favorite teacher I've had at A&M. He makes his lectures interesting and relatable to keep students engaged. Attendance isn't mandatory, however, attending lectures makes the exams a lot easier if you take good notes.",
+          "Goat. Go to class and get an A bruh"
+        ],
+        "overall": 4.1,
+        "isMandatory": false,
+        "difficulty": 2.5
       }
     }
   ],
   "schedule": {},
-  "user_name": "Isaac I Burns (935007106)",
+  "user_name": "Rafay Kashif Bhatti (734009209)",
   "semester": "Fall 2024"
 }

@@ -121,6 +121,7 @@ function parsePDF(pdf) {
                 j = 0
                 data = getSchedule(data)
                 data = await require('./anex_schedule_parser').get_grades(data)
+                data = await require('./rmp_parser.js').processRatings(data)
                 data.user_name = template.campus
                 data.semester = decodeURIComponent(pdfData.Pages[1].Texts[0].R[0].T + pdfData.Pages[1].Texts[1].R[0].T)
                 const newData = Object.assign({}, data)
