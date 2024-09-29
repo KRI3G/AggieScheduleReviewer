@@ -224,7 +224,7 @@ async function loadJSON(filePath) {
 async function getProfId(ultimateObj, classIndex) {
 	const profJSON = await loadJSON('../data/professors.json');
 	//console.log(classIndex);
-	//console.log(ultimateObj.data[classIndex].prof);
+	//console.log(classIndex);
 	const profName = ultimateObj.data[classIndex].prof;
 
 	for (let currentProf = 0; currentProf < profJSON.data.length; currentProf++) {
@@ -241,7 +241,10 @@ async function getProfId(ultimateObj, classIndex) {
 
 async function getProfRating(ultimateObj, classIndex) {
 	const profJSON = await loadJSON('../data/professors.json');
+  //console.log(classIndex);
 	const profName = ultimateObj.data[classIndex].prof;
+  //console.log(ultimateObj.data[0].prof);
+  //console.log(ultimateObj.data[classIndex].prof);
 
 	for (let currentProf = 0; currentProf < profJSON.data.length; currentProf++) {
 		const currentProfName = profJSON.data[currentProf].tFname + " " + profJSON.data[currentProf].tLname;
@@ -254,8 +257,9 @@ async function getProfRating(ultimateObj, classIndex) {
 // Function to get average ratings of professor
 async function getRatings(professor, classIndex) {
 	const professorId = await getProfId(professor, classIndex);
+  const overall = await getProfRating(professor, classIndex);
 	if (professorId == "N/A") {
-		const output = [];
+		const output = {};
 		return output;
 	}
 	//console.log(professorId + " professor Id")
@@ -265,7 +269,6 @@ async function getRatings(professor, classIndex) {
 	const rmpResponseData = await rmpResponse.json();
 	
 	let userReviews = [];
-	let overall = await getProfRating(professor, classIndex);
 	let attendance = 0;
 	let difficulty = 0;
 
@@ -289,39 +292,34 @@ async function getRatings(professor, classIndex) {
 	output["isMandatory"] = (isMandatory);
 	output["difficulty"] = (difficulty/20);
 	// [All reviews, Overall Rating, is attendance mandatory, difficulty]
+  //console.log(output);
 	return output;
 };
+const list = [];
 
-const list = [
+async function processRatings() {
 
-];
-
-const promise = new Promise((resolve, reject) => { 
-  const success = true;
-  if(success){
-    for (let scheduleClassInx in object.data) {
-    //console.log(scheduleClassInx + " iteration")
-    const ratings = getRatings(object, scheduleClassInx);
-    object.data[scheduleClassInx].ratings = ratings;
-    list.push(ratings);
-    //console.log(list);
-    //console.log(object.data[scheduleClassInx]);
-    };
-    const success = true;
-    resolve(list);
-  }else{
-    reject("promise was rejected!");
+  // Loop through all classes and wait for the ratings to resolve
+  for (let scheduleClassInx in object.data) {
+    const ratings = await getRatings(object, scheduleClassInx); // Await the result
+    object.data[scheduleClassInx].ratings = ratings; // Assign the resolved ratings
+    list.push(ratings); // Push resolved ratings to list
   }
-});
+  //console.log(list);
+  return list; // Return the list of ratings
+}
 
-promise
-  .then(() => {
+
+processRatings()
+  .then((list) => {
     console.log(list);
   })
   .catch((error) => {
     console.error("error! ", error);
   });
+  
+
 
 module.exports = {
-  getRatings
+  processRatings
 };

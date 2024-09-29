@@ -1,6 +1,9 @@
+const {main} = require("./setup_statistics");
+
 document.getElementById('pdf-form').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevents the form from submitting normally
 
+    const table_container = document.getElementById('table-container');
     const pdf = document.getElementById('pdf-file').files[0]; 
     const pdf_form = document.querySelector("#pdf-form");
     const text_box = document.querySelector("#speech-bubble-container");
@@ -21,6 +24,7 @@ document.getElementById('pdf-form').addEventListener('submit', async function(ev
         
         text_box.style.display = "block";
         to_statistics_hyperlink.style.display = "inline";
+        table_container.display = "block";
     } 
     else {
         console.log('No PDF file selected');
@@ -58,6 +62,7 @@ async function retrieveData(buffer) {
         }
         // Start the typing effect
         typeLetter();
+        main(data.data)
       });
       
 
