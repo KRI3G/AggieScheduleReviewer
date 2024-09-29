@@ -1,0 +1,6 @@
+README.md
+setup.py
+RateMyProfessorPyAPI.egg-info/PKG-INFO
+RateMyProfessorPyAPI.egg-info/SOURCES.txt
+RateMyProfessorPyAPI.egg-info/dependency_links.txt
+RateMyProfessorPyAPI.egg-info/top_level.txt
