@@ -2,7 +2,12 @@
 document.getElementById('pdf-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevents the form from submitting normally
 
-        const pdf = document.getElementById('pdf-file').files[0]; 
+    const pdf = document.getElementById('pdf-file').files[0]; 
+    const pdf_form = document.querySelector("#pdf-form");
+    const text_box = document.querySelector("#speech-bubble-container");
+        
+    pdf_form.style.display = "none";
+    
     if (pdf) {
         //console.log('PDF file selected:', pdf); 
         const reader = new FileReader();
@@ -14,10 +19,9 @@ document.getElementById('pdf-form').addEventListener('submit', function(event) {
         };
 
         reader.readAsArrayBuffer(pdf);
+        
+        text_box.style.display = "block";
     } 
-    
-    
-    
     else {
         console.log('No PDF file selected');
     }
