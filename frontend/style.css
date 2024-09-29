@@ -293,22 +293,26 @@ tr:hover {
 }
 .helpButton{
    
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 200px; /* Adjust to your needs */
-    height: 50px; /* Adjust to your needs */
-    background-image: url('Directional_sign.png'); /* Replace with your image URL */
-    background-size: cover;
-    background-position: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px; /* Add padding to prevent clipping */
+    width: 150px;
+    height: 200px;
+    background-image: url('Directional_sign.png');
+    background-size: contain;
+    background-position: top right;
+    background-repeat: no-repeat;
     color: white;
     font-size: 16px;
     border: none;
     cursor: pointer;
     text-align: center;
-    box-sizing: border-box;
+    border-radius: 5px;
     text-decoration: none;
-    z-index: 1000; /* Ensures it stays above other elements */
+    z-index: 1000;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
 .helpButton:hover{
     Transform: scale(1.2);
