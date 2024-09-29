@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 .big-title {
     font-size: 50px;  /* Adjust the size as needed */
     font-weight: bold; /* Makes the text bold */
@@ -157,4 +159,75 @@ body{
 .img-container {
     animation: sway 3s ease-in-out infinite;
     transform-origin: top center; /* Makes it sway like it's hanging from the top */
+}
+
+.loader {
+    border: 16px solid #636363; /* Light grey */
+    box-shadow: -5px 5px 0 #fff,
+                         5px 5px 0 #fff,
+                         5px -5px 0 #fff,
+                         -5px -5px 0 #fff;
+    border-top: 16px solid #500000; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1.5s linear infinite;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .name {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color:#500000;
+    
+    text-shadow: -2px 2px 0 #fff,
+                         2px 2px 0 #fff,
+                         2px -2px 0 #fff,
+                         -2px -2px 0 #fff;
+    font-size: 72px;
+    display: block;
+    margin-right: auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #speech-bubble-container {
+    position: relative;
+    display: inline-block;
+    max-width: 200px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    margin-left: 20px;
+}
+
+#speech-bubble-container::before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid white;
+}
+
+#speech-bubble-text {
+    color: black;
+    font-size: 14px;
+}
+
+#reveille_text {
+    position: relative;
+    display: inline-block;
 }
