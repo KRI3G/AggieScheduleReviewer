@@ -1,71 +1,4 @@
 {
-  "schedule": {
-    "M": [
-      {
-        "class": "ENGR LAB I COMPUTATION-GV",
-        "timeStart": "16:10",
-        "timeEnd": "17:00"
-      },
-      {
-        "class": "ENGR LAB I COMPUTATION-GV",
-        "timeStart": "17:01",
-        "timeEnd": "18:00"
-      }
-    ],
-    "T": [
-      {
-        "class": "GEN CHEM FOR ENGINEERS",
-        "timeStart": "09:35",
-        "timeEnd": "10:50"
-      },
-      {
-        "class": "PRIN OF STATISTICS I",
-        "timeStart": "11:10",
-        "timeEnd": "12:25"
-      },
-      {
-        "class": "ENGINEERING MATH III",
-        "timeStart": "15:55",
-        "timeEnd": "17:10"
-      }
-    ],
-    "W": [
-      {
-        "class": "GEN CHEM FOR ENGR LAB",
-        "timeStart": "08:00",
-        "timeEnd": "10:50"
-      },
-      {
-        "class": "ENGR LAB I COMPUTATION-GV",
-        "timeStart": "16:10",
-        "timeEnd": "18:00"
-      }
-    ],
-    "R": [
-      {
-        "class": "GEN CHEM FOR ENGINEERS",
-        "timeStart": "09:35",
-        "timeEnd": "10:50"
-      },
-      {
-        "class": "PRIN OF STATISTICS I",
-        "timeStart": "11:10",
-        "timeEnd": "12:25"
-      },
-      {
-        "class": "ENGINEERING MATH III",
-        "timeStart": "15:55",
-        "timeEnd": "17:10"
-      }
-    ],
-    "F": [
-      {
-        "class": "HU: Light House LLC",
-        "timeStart": "12:00",
-        "timeEnd": "12:50"
-      }
-    ]
-  },
   "classes": [
     {
       "class": {
@@ -283,6 +216,7 @@
       }
     }
   ],
+  "schedule": {},
   "user_name": "Isaac I Burns (935007106)",
   "semester": "Fall 2024"
 }

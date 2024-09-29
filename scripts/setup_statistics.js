@@ -1,4 +1,4 @@
-const {getRatings} = require('../backend/rmp_parser');
+//const {getRatings} = require('../backend/rmp_parser');
 
 const json_object = {
     "schedule": {
@@ -5002,6 +5002,7 @@ const json_object = {
 
 const thead = document.querySelector('table thead tr');
 const tbody = document.querySelector('table tbody');
+const body = document.querySelector('body');
 // [[All reviews], Overall Rating, is attendance mandatory, difficulty]
 let columns = ["classname", "professor", "data_available?", "average_gpa","a_percentage","total_students_taught","overall rating","is attendance mandatory", ];
 
@@ -5037,16 +5038,24 @@ for(const class_object of classes){
         table_row.append(data_div);
     }
 
+    
     const ratings_object = class_object.ratings;
     for(key of Object.keys(ratings_object)){
+        if(key == "reviews") continue;
         const ratings_div = document.createElement('td');
         ratings_object.innerHTML = ratings_object[key] == null ? "N/A": ratings_div[key];
         table_row.append(ratings_div);
     }
 
+    const h1 = document.createElement('h1');
+    h1.innerHTML = "What people are saying about " + class_object.prof + "!";
     for(review of ratings_object.reviews){
-        
+        const review_div = document.createElement('text');
+        review_div.innerHTML = review;
+        h1.appendChild(review_div);
     }
+    body.appendChild(h1);
+    
 
     tbody.appendChild(table_row);
     //console.log(tbody.innerHTML);

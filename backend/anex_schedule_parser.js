@@ -89,7 +89,6 @@ async function get_grades(schedule_data){
     }
   });
   await Promise.all(promises);
-  console.log(schedule_data)
   return schedule_data;
 }
 

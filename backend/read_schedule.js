@@ -1,5 +1,5 @@
 const pdf = require('pdf2json')
-let data = []
+
 const pdfParser = new pdf();
 function militaryTimeToMinutes(time) {
     // Split the time string into hours and minutes
@@ -13,8 +13,8 @@ function militaryTimeToMinutes(time) {
 
 function getSchedule(data) {
     const schedule = {"M": [], "T": [], "W": [], "R": [], "F": []}
-    data.forEach(cl => {
-        console.log(cl)
+    data.classes.forEach(cl => {
+
         cl.dates.forEach(date => {
             date.days.forEach(day => {
                 schedule[day].push({class: cl.name, timeStart: date.timeStart, timeEnd: date.timeEnd})
@@ -22,35 +22,42 @@ function getSchedule(data) {
         })
     })
 
-    console.log(schedule)
+    
     Object.keys(schedule).forEach(d => {
       schedule[d].sort((a, b) => militaryTimeToMinutes(a.timeStart) - militaryTimeToMinutes(b.timeStart));
     })
 
-    return {schedule: schedule, classes: data}
+    return data
 }
 
 function parsePDF(pdf) {
+    console.log("At start")
     return new Promise((resolve, reject) => {
+        let data = {classes: [], schedule: {}}
+        let alreadyOn = false
         pdfParser.parseBuffer(pdf);
+        console.log("Under Promise")
         pdfParser.on("pdfParser_dataError", (errData) =>
-            console.error(errData.parserError)
+            console.log(errData.parserError)
            );
 
         pdfParser.on("pdfParser_dataReady", async (pdfData) => {
-            
+            if (alreadyOn) return; // I hate that i have to do this but I dont know how to fix it. we love bandaids!
+            alreadyOn = true
+            console.log("Testing in PDF Parser Listener")
             try {
+                console.log("Data:")
+                console.log(data)
                 let i = 10; // Actual data starts at index of 10
                 let template = {class: {dept: "", num: "", section: "", full: ""}, name: "", campus: "", hours: 0, id: "", prof: "", dates: [{date: "", days: [], timeStart: "", timeEnd: "", building: {name: "", room: "", type: ""}}]};
                 const template_keys = Object.keys(template);
                 let j = 0;
                 let datastr = "";
-                console.log(pdfData.Pages[1].Texts.map(x => x.R[0]))
                 while (i < pdfData.Pages[1].Texts.length) { // The table of schedules is on the second page
                     const text = pdfData.Pages[1].Texts[i].R[0].T;
                     datastr += text;
                     if (!text.endsWith("%20")) {
-                        console.log(datastr)
+
                         let decoded = decodeURIComponent(datastr);
                         
                         if (template_keys[j] === "dates") {
@@ -103,8 +110,8 @@ function parsePDF(pdf) {
                         datastr = "";
 
                         if (j === template_keys.length) {
-                            console.log(data)
-                            data.push(template);
+      
+                            data.classes.push(template);
                             template = {class: {dept: "", num: "", section: "", full: ""}, name: "", campus: "", hours: 0, id: "", prof: "", dates: [{date: "", building: {name: "", room: "", type: ""}}]};
                             j = 0;
                         }
@@ -116,15 +123,18 @@ function parsePDF(pdf) {
                 i = 0
                 j = 0
                 data = getSchedule(data)
-
                 data = await require('./anex_schedule_parser').get_grades(data)
                 data.user_name = template.campus
                 data.semester = decodeURIComponent(pdfData.Pages[1].Texts[0].R[0].T + pdfData.Pages[1].Texts[1].R[0].T)
-                resolve(data); // Resolve the promise with the parsed data
-                data = []
+                const newData = Object.assign({}, data)
+                data = {classes: [], schedule: {}}
+                resolve(newData); // Resolve the promise with the parsed data
+                
             } catch (error) {
-                reject(error); // Reject the promise if any error occurs
-                data = []
+                console.log(error)
+                data = {classes: [], schedule: {}}
+                return Promise.reject('or nah') // Reject the promise if any error occurs
+               
             }
         });
     });
