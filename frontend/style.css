@@ -107,6 +107,7 @@ body {
 }
 
 body{
+    overflow-x:hidden;
     overflow-y: hidden;
 }
 #speech-bubble-container{
@@ -136,9 +137,8 @@ body{
     display:none;
 }
 #table-container{
-    position:fixed;
-    top:1%;
-    left:32%;
+    position:block;
+    margin-top: 20px;
     font-family: Arial, sans-serif;
     background-color: maroon;
 }
@@ -227,58 +227,66 @@ tr:hover {
     100% { transform: rotate(360deg); }
   }
 
-  #speech-bubble-container {
+  #main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#reveille-text-review {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transform: translateX(5%);
+    
+}
+/* Dog image styling */
+#reveille-review-container {
+    margin-right: 20px;
+}
+
+#reveille-review {
+    max-width: 250px;
+    height: auto;
+}
+
+/* Speech bubble styling */
+#speech-bubble-review-container {
     position: relative;
     display: inline-block;
-    max-width: 200px;
-    padding: 10px;
-    background-color: white;
+    background-color: #fff;
     border: 2px solid black;
     border-radius: 10px;
-    font-size: 14px;
+    padding: 10px;
+    max-width: 1000px;
+    margin-top: 20px;
     font-family: Arial, sans-serif;
-    margin-left: 20px;
+    padding: 10px, 50px;
+    font-size: 16px;
+    align-content: center;
+    
 }
 
-#speech-bubble-container::before {
+/* Adding the tail of the speech bubble */
+#speech-bubble-review-container::before {
     content: "";
     position: absolute;
-    bottom: -20px;
-    left: 20px;
+    top: 20px;
+    left: -20px;
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 20px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid white;
+    
 }
 
-#speech-bubble-text {
+#speech-bubble-review-text {
     color: black;
-    font-size: 14px;
 }
 
-#reveille_text {
-    position: relative;
-    display: inline-block;
-}
-.helpButton {
-    position: fixed;
-    top: 10px;   /* Adjust this value to move the button vertically */
-    right: 10px; /* Adjust this value to move the button horizontally */
-    padding: 15px 30px;
-    background-image: url('Directional_sign.png'); /* Replace with your image URL */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-    z-index: 1000;
-}
-
-.HelpButton:hover {
-    opacity: 0.8;
+/* Table below speech bubble */
+#data-table-container {
+    margin-top: 30px;
 }

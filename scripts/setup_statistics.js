@@ -1,4 +1,5 @@
 function main(json_object){
+    console.log(json_object)
     const thead = document.querySelector('table thead tr');
     const tbody = document.querySelector('table tbody');
     const body = document.querySelector('body');
@@ -29,6 +30,10 @@ function main(json_object){
         table_row.appendChild(data_available_div);
 
         console.log(grades_object);
+
+        if (!grades_object.data_available) {
+            data_object[key] = "N/A"
+        }
         const data_object = grades_object.data;
         for(key of Object.keys(data_object)){
             const data_div = document.createElement('td');
@@ -62,7 +67,3 @@ function main(json_object){
         //console.log(tbody.innerHTML);
     }
 }
-
-module.exports = {
-    main
-};

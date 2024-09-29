@@ -84,7 +84,13 @@ async function get_grades(schedule_data){
     } catch (error) {
       console.error("Error while grabbing JSON: ", error);
       schedule_data.classes[i]["grades"] = {
-        "data_available": false
+        "data_available": false,
+        "data": { 
+          "Average_GPA" : "N/A",
+          "A_percentage": "N/A",
+          "Total_Students_Taught": "N/A"
+        },
+        "past_classes": "N/A"
       };
     }
   });
