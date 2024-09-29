@@ -334,10 +334,10 @@ th:last-child, td:last-child {
 }
 .helpButton{
    
-    position: fixed;
+    position: absolute;
     top: 10px;
     right: 10px;
-    width: 2000px; /* Adjust to your needs */
+    width: 200px; /* Adjust to your needs */
     height: 50px; /* Adjust to your needs */
     background-image: url('Directional_sign.png'); /* Replace with your image URL */
     background-size: cover;
@@ -347,7 +347,7 @@ th:last-child, td:last-child {
     border: none;
     cursor: pointer;
     text-align: center;
-   
+    box-sizing: border-box;
     text-decoration: none;
     z-index: 1000; /* Ensures it stays above other elements */
 }
