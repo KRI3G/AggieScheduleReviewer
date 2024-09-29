@@ -17,7 +17,7 @@ async function loadJSON(filePath) {
 
 // Function to find the RMP ID number of a given 
 async function getProfId(ultimateObj, classIndex) {
-	const profJSON = await loadJSON('../data/professors.json');
+	const profJSON = await loadJSON('./data/professors.json');
 	//console.log(classIndex);
 	//console.log(classIndex);
 	const profName = ultimateObj.classes[classIndex].prof;
@@ -35,7 +35,7 @@ async function getProfId(ultimateObj, classIndex) {
 };
 
 async function getProfRating(ultimateObj, classIndex) {
-	const profJSON = await loadJSON('../data/professors.json');
+	const profJSON = await loadJSON('./data/professors.json');
   //console.log(classIndex);
 	const profName = ultimateObj.classes[classIndex].prof;
   //console.log(ultimateObj.data[0].prof);

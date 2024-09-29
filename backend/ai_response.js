@@ -34,7 +34,8 @@ const safetySettings = [
   }
 ];
 
-require('dotenv').config({path: "../.env"});
+require('dotenv').config()
+
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 async function generateReview(data) {

@@ -3,10 +3,10 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src = "../scripts/script.js"></script>
-    <script defer src = "../scripts/Website.js"></script>
-    <script defer src = "../scripts/setup_statistics.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <script defer src = "./scripts/script.js"></script>
+    <script defer src = "./scripts/Website.js"></script>
+    <script defer src = "./scripts/setup_statistics.js"></script>
+    <link rel="stylesheet" href="./frontend/style.css">
     <title>Howdy!</title>
     </head>
     
@@ -20,11 +20,11 @@
 
             
             <div class = img-container>
-                <img src="Sign_png.png" alt="hanging sign" width="300">
+                <img src="./frontend/Sign_png.png" alt="hanging sign" width="300">
                 <h1 class="title sign" >Howdy!</h1>
             </div>
 
-            <img src="rev_test.png" id="reveille" style = "transform: translateY(140%) scale(125%);">
+            <img src="./frontend/rev_test.png" id="reveille" style = "transform: translateY(140%) scale(125%);">
                 <div id="speech-bubble-container" style = "transform: translateY(160%);">
                     <div id="speech-bubble-text" style = "color: black; font-size: 30px; margin: 10px; text-align: center;">Howdy! Welcome to <b>Aggie Schedule REViewer!</b><br> Submit a PDF of your schedule to get a review from me!<br>Click "Help" for instructions on how to get your schedule!</div>
                 </div>
@@ -56,7 +56,7 @@
         </div>
 
         <div id = "reveille-text-review" style = "display: none">
-            <img src="rev_test.png" id="reveille-review">
+            <img src="./frontend/rev_test.png" id="reveille-review">
             <div id="speech-bubble-review-container">
                 <div id="speech-bubble-review-text" style = "color: black">div text</div>
             </div>
