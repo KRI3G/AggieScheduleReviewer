@@ -10,7 +10,7 @@ function parsePDF(pdf) {
             console.error(errData.parserError)
            );
 
-        pdfParser.on("pdfParser_dataReady", (pdfData) => {
+        pdfParser.on("pdfParser_dataReady", async (pdfData) => {
             try {
                 let i = 10; // Actual data starts at index of 10
                 let template = {class: {dept: "", num: "", section: "", full: ""}, name: "", campus: "", hours: 0, id: "", prof: "", dates: [{date: "", days: [], timeStart: "", timeEnd: "", building: {name: "", room: "", type: ""}}]};
@@ -81,6 +81,7 @@ function parsePDF(pdf) {
                 datastr = ""
                 i = 0
                 j = 0
+                data = await require('./anex_schedule_parser').get_grades(data)
                 resolve(data); // Resolve the promise with the parsed data
                 data = []
             } catch (error) {
