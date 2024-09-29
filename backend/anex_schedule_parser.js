@@ -12,8 +12,13 @@ async function loadJSON(filePath) {
 }
 
 async function get_grades(schedule_data){
+<<<<<<< Updated upstream
   
   const promises = schedule_data.classes.map(async (class_data, i) => {
+=======
+  console.log(schedule_data);
+  const promises = schedule_data.map(async (class_data, i) => {
+>>>>>>> Stashed changes
     const dept = class_data["class"]["dept"];
     const number = class_data["class"]["num"];
     const section = class_data["class"]["section"];
@@ -69,6 +74,8 @@ async function get_grades(schedule_data){
         }
         past_classes.push(professor_class_analytics);
       }
+      //console.log(past_classes);
+      past_classes.splice(2);
 
       analytics["Average_GPA"] = gpa_sum / classes;
       analytics["A_percentage"] = (a_sum / n_students) * 100;
@@ -82,8 +89,19 @@ async function get_grades(schedule_data){
 
     } catch (error) {
       console.error("Error while grabbing JSON: ", error);
+<<<<<<< Updated upstream
       schedule_data.classes[i]["grades"] = {
         "data_available": false
+=======
+      schedule_data[i]["grades"] = {
+        "data_available": false,
+        "data":{
+          "Average_GPA": null,
+          "A_percentage": null,
+          "Total_Students_Taught": null 
+        },
+        "past_classes": null
+>>>>>>> Stashed changes
       };
     }
   });

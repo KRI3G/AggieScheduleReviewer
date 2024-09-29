@@ -1,3 +1,9 @@
+const to_statistics = document.querySelector("#to-statistics");
+
+to_statistics.addEventListener('click', function(){
+    window.location.href = "https://example.com"; //move to statistics webpage
+});
+
 
 document.getElementById('pdf-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevents the form from submitting normally
@@ -19,7 +25,7 @@ document.getElementById('pdf-form').addEventListener('submit', function(event) {
         };
 
         reader.readAsArrayBuffer(pdf);
-        
+
         text_box.style.display = "block";
     } 
     else {

@@ -104,7 +104,6 @@ body {
     margin-top: 400px;
 }
 
-
 body{
     overflow-y: hidden;
 }
@@ -128,6 +127,8 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
 
 @keyframes sway {
     0% {
