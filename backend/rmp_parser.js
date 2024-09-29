@@ -221,9 +221,10 @@ async function loadJSON(filePath) {
 }
 
 // Function to find the RMP ID number of a given 
-async function getProfId(ultimateObj) {
+async function getProfId(ultimateObj, classIndex) {
 	const profJSON = await loadJSON('../data/professors.json');
-	const profName = ultimateObj.data[0].prof;
+	console.log(ultimateObj.data[classIndex].prof)
+	const profName = ultimateObj.data[classIndex].prof;
 
 	for (let currentProf = 0; currentProf < profJSON.data.length; currentProf++) {
 		const currentProfName = profJSON.data[currentProf].tFname + " " + profJSON.data[currentProf].tLname;
@@ -234,29 +235,30 @@ async function getProfId(ultimateObj) {
 
 };
 
-async function getProfRating(ultimateObj) {
+async function getProfRating(ultimateObj, classIndex) {
 	const profJSON = await loadJSON('../data/professors.json');
-	const profName = ultimateObj.data[0].prof;
+	const profName = ultimateObj.data[classIndex].prof;
 
 	for (let currentProf = 0; currentProf < profJSON.data.length; currentProf++) {
 		const currentProfName = profJSON.data[currentProf].tFname + " " + profJSON.data[currentProf].tLname;
 		if (currentProfName == profName) {
 			return profJSON.data[currentProf].overall_rating;
-		}
+		};
 	};
 
-}
+};
 
 // Function to get average ratings of professor
-async function getRatings(professor) {
-	const professorId = await getProfId(professor);
+async function getRatings(professor, classIndex) {
+	const professorId = await getProfId(professor, classIndex);
+	console.log(professorId + " professor Id")
 	const rmpEndpoint = "https://www.ratemyprofessors.com/paginate/professors/ratings?tid=" + professorId + "&filter=&courseCode=&page=";
 
 	const rmpResponse = await fetch(rmpEndpoint + "1");
 	const rmpResponseData = await rmpResponse.json();
 	
 	var userReviews = [];
-	var overall = await getProfRating(professor);
+	var overall = await getProfRating(professor, classIndex);
 	var attendance = 0;
 	var difficulty = 0;
 
@@ -280,11 +282,17 @@ async function getRatings(professor) {
 	output.push(isMandatory);
 	output.push(difficulty/20);
 
+	console.log(output)
 	// [All reviews, Overall Rating, is attendance mandatory, difficulty]
 	return output;
 };
 
-// Rate My Professor endpoint for ratings, page missing
-//const rmpEP = 'https://www.ratemyprofessors.com/paginate/professors/ratings?tid=2590541&filter=&courseCode=&page=';
 
+for (let scheduleClassInx in object.data) {
+	console.log(scheduleClassInx + " iteration")
+	const ratings = getRatings(object, scheduleClassInx);
+
+	object.data[scheduleClassInx].ratings = ratings;
+	console.log(object.data[scheduleClassInx]);
+}
 getRatings(object);
