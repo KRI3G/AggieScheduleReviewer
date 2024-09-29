@@ -38,25 +38,26 @@ function parsePDF(pdf) {
            );
 
         pdfParser.on("pdfParser_dataReady", async (pdfData) => {
+            
             try {
                 let i = 10; // Actual data starts at index of 10
                 let template = {class: {dept: "", num: "", section: "", full: ""}, name: "", campus: "", hours: 0, id: "", prof: "", dates: [{date: "", days: [], timeStart: "", timeEnd: "", building: {name: "", room: "", type: ""}}]};
                 const template_keys = Object.keys(template);
                 let j = 0;
                 let datastr = "";
-                
+                console.log(pdfData.Pages[1].Texts.map(x => x.R[0]))
                 while (i < pdfData.Pages[1].Texts.length) { // The table of schedules is on the second page
                     const text = pdfData.Pages[1].Texts[i].R[0].T;
                     datastr += text;
                     if (!text.endsWith("%20")) {
-
+                        console.log(datastr)
                         let decoded = decodeURIComponent(datastr);
-                        console.log(decoded)
+                        
                         if (template_keys[j] === "dates") {
                             if (datastr.startsWith("Date")) {
                                 template["dates"][0]["date"] = decoded.split("Date: ")[1];
                             } else if (datastr.startsWith("Days")) {
-                                const daysRegex = /(?<=Days:\s*)[A-Z ]+(?=\s*Time)/;
+                                const daysRegex = /(?<=Days:\s*)[A-Z ]+(?=\s*Time)|(?<=Days:)[A-Z ]/
                                 const daysMatch = decoded.match(daysRegex);
                                 
                                 const timeRegex = /(?<=Time:\s*)\d{2}:\d{2} - \d{2}:\d{2}/;
@@ -92,6 +93,9 @@ function parsePDF(pdf) {
                             template["class"]["num"] = split_class[1];
                             template["class"]["section"] = split_class[2];
                             template["class"]["full"] = decoded;
+                        } else if ((template_keys[j] == "name" || template_keys[j] == "prof") && decoded.endsWith("-")) {
+                            template[template_keys[j]] = decoded + pdfData.Pages[1].Texts[i + 1].R[0].T;
+                            i++
                         } else {
                             template[template_keys[j]] = decoded;
                         }
