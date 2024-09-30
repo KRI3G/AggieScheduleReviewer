@@ -1,6 +1,6 @@
 # AggieScheduleReviewer
 
-![image](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/347/datas/small.png)
+![Logo](gallery/logo.png)
 
 ## Inspiration
 We all had trouble signing up for classes, torn between overestimating and underestimating ourselves. So we decided to help future students with this conondrum.
@@ -18,7 +18,6 @@ We all learned a lot - how async works, how JS reads JSON objects, and how to wo
 We realized after brainstorming that this is a legitamely helpful project, and we are considering fleshing it out to work for Galveston students, as well as perhaps giving alternative classes.
 
 ## Image Gallery
-
-![image]([https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/347/datas/small.png](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/025/datas/gallery.jpg))
-![image]([https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/347/datas/small.png](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/027/datas/gallery.jpg))
-![image]([https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/347/datas/small.png](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/053/135/datas/gallery.jpg))
+![Home](gallery/home.png)
+![Help](gallery/help.png)
+![Review](gallery/review.png)
